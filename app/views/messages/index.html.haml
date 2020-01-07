@@ -15,11 +15,16 @@
   
   
   .chat_contents
-    - @messages.each do | message |
-      - if message.user.id == current_user.id
-        = render 'left_petear', { message: message}
+    -@group.users.each do |user|
+      -if current_user.id == user.id
+        - @messages.each do | message |
+          - if message.user.id == current_user.id
+            = render 'left_petear', { message: message}
+          - else
+            = render 'right_petear', { message: message }
       - else
-        = render 'right_petear', { message: message }
+        - @messages.each do | message |
+          = render 'center_petear', { message: message}
         
   -@group.users.each do |user|
     -if current_user.id == user.id

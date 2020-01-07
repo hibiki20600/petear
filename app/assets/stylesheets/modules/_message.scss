@@ -76,6 +76,35 @@ li {
     background-size: cover;
     box-sizing: border-box;
     overflow: auto;
+    &__center_petear{
+      margin-top: 40px;
+      margin-left: 15vw;
+      padding-top: 5px;
+      border: 1px solid rgb(90, 90, 90);
+      width: 420px;
+      background-color: white;
+      &__image{
+        border: 5px solid white;
+        border-top: none;
+      }
+      &__user{
+        display: flex;
+        &__icon{
+          border-radius: 50%;
+          background-color: white;
+          size: contain;
+        }
+        &__name{
+          font-size: 16px;
+          font-weight: bold;
+          color: black;
+          font-family: 'New Gulim';
+          line-height: 35px;
+          margin-left: 8px;
+        }
+      }
+      
+    }
     &__left_petear{
       margin-top: 40px;
       padding-top: 5px;
