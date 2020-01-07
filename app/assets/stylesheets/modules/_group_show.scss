@@ -1,0 +1,161 @@
+//showの部分
+
+.follow{
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.follow-now{
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+
+//許可ボタン
+.subscribe{
+  background-color: transparent;
+  line-height: 50px;
+  border: none;
+  color: black;
+  position: absolute;
+  right: 20px;
+}
+//メンバーの退会ボタン
+.unsubscribe{
+  background-color: transparent;
+  line-height: 50px;
+  border: none;
+  color: black;
+  position: absolute;
+  right: 20px;
+}
+//上の退会ボタン
+.unsubscribe_btn{
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+//解散ボタン
+.dissolve{
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.show{
+  background-image: url(desk.jpeg);
+  background-size: cover;
+  .show_group{
+    &__header{
+      height: 75px;
+      width: 70vw;
+      margin: 0 auto;
+      background-image: url(Chalkboard.jpg);
+      background-size: cover;
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      &__left{
+        &__title{
+          font-size: 34px;
+          line-height: 80px;
+          margin-left: 70px;
+          font-family: cursive;
+          color: white;
+          text-shadow: 1px 1px rgb(37, 36, 36);
+          box-sizing: border-box;
+        }
+      }
+      &__right{
+        margin-right: 35px;
+        display: flex;
+        text-shadow: 1px 1px rgb(37, 36, 36);
+        justify-content: space-between;
+      }
+    }
+  }
+    
+  
+  
+  .member_list{
+    height: calc( 100vh - 80px);
+    width: 70vw;
+    margin: 0 auto;
+    padding: 80px 0 20vh 10vw ;
+    background-color: rgba(255, 255, 255, 0.85);
+    background-blend-mode:lighten;
+    background-size: cover;
+    box-sizing: border-box;
+    overflow: auto;
+  }
+  
+  .owner{
+    font-family: cursive;
+    color: black;
+    font-size: 60px;
+  }
+  .owner_box{
+    margin-top: 27px;
+    margin-right: 15vw;
+    padding-top: 3px;
+    margin-left: 3vw;
+    margin-bottom: 98px;
+    padding-bottom: 3px;
+    border-top: 1px solid rgb(70, 70, 70);
+    border-bottom: 1px solid rgb(70, 70, 70);
+    display: flex;
+    &__image{
+      margin-left: 1vw;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+    &__user{
+      margin-top: 17px;
+      margin-left: 40px;
+      &__name{
+        color: black !important;
+        font-size: 30px;
+      }
+    }
+  }
+  .member{
+    margin-bottom: 47px;
+    font-size: 30px;
+    font-family: cursive;
+    color: black;
+  }
+  .member_box{
+    margin-top: 10px;
+    margin-left: 4vw;
+    margin-right: 15vw;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-top: 1px solid rgb(70, 70, 70);
+    border-bottom: 1px solid rgb(70, 70, 70);
+    display: flex;
+    position: relative;
+    &__image{
+      background-color: #fff;
+      border-radius: 50%;
+      margin-left: 10px;
+    }
+    &__user{
+      line-height: 50px;
+      margin-left: 45px;
+      &__name{
+        color: black !important;
+        font-size: 20px;
+      }
+    }
+  
+  }
+  
+  .follower{
+    font-size: 30px;
+    font-family: cursive;
+    color: black;
+    margin-top: 78px;
+  }
+}

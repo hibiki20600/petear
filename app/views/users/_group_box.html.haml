@@ -1,0 +1,8 @@
+.belongs_to_group__box
+  = link_to group_messages_path(group) do
+    = image_tag group.image, alt: "image", class: "belongs_to_group__box__image"
+  .belongs_to_group__box__text
+    %h2.belongs_to_group__box__text__title  ~class name~
+    = link_to group_messages_path(group) do
+      .belongs_to_group__box__text__title_name
+        = group.name

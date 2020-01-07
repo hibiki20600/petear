@@ -1,0 +1,75 @@
+
+.group_icon{
+  color: white;
+  font-size: 16px;
+}
+
+.chat_group_form{
+  width: 100vw;
+  height: 100vh;
+  padding-top: 9vh;
+  padding-left: 22vw;
+  background-image: url(33334.jpeg);
+  background-size: cover;
+  box-sizing: border-box;
+  font-size: 50px;
+  color: white;
+  
+}
+
+
+.group_field{
+  font-size: 25px;
+  margin-top: 15px;
+  &__input{
+    margin-left: 2px;
+    &-box{
+      width: 30vw;
+      margin-top: 5px;
+      padding: 5px 0 5px 5px;
+      font-size: 15px;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.group_image_field{
+  font-size: 25px;
+  margin-top: 15px;
+  &__label{
+    margin-left: 2px;
+    box-sizing: border-box;
+  }
+}
+
+
+
+select#group_tag{
+  font-size: 15px;
+  width: 17vw;
+  text-align: center;
+  border-radius: 0;
+}
+
+
+.group_field_btn{
+  margin-top: 15px;
+  box-sizing: border-box;
+  margin-left: 20vw;
+}
+
+
+
+.btn{
+  color: black;
+  background-color: #fff;
+  font-size: 16px;
+  padding: 8px 10px 8px 10px ;
+  border: 1px solid #FFF;
+}
+.create_btn{
+  font-size: 16px;
+  padding: 8px 20px 8px 20px ;
+  border: 1px solid #FFF;
+}
+

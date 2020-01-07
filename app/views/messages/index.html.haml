@@ -1,0 +1,40 @@
+
+.chat
+  .chat_header
+    .chat_header__left
+      .chat_header__left__title
+        = @group.name
+    %ul.chat_header__right
+      %li 
+        = link_to "メンバー", group_path(@group), class: 'chat_header__right__li'
+      -if @group.owner?(current_user.id)
+        %li
+          = link_to "Edit", edit_group_path(@group.id), class: 'chat_header__right__li'
+      %li 
+        =link_to "Topへ", root_path, class: 'chat_header__right__li'
+  
+  
+  .chat_contents
+    - @messages.each do | message |
+      - if message.user.id == current_user.id
+        = render 'left_petear', { message: message}
+      - else
+        = render 'right_petear', { message: message }
+        
+  -@group.users.each do |user|
+    -if current_user.id == user.id
+      .chat_form
+        = form_for [@group, @message], id: 'new_message' do |f|
+          .chat_form__box
+            .chat_form__box__input
+              = f.text_field :message, class: 'chat_form__box__input__message', placeholder: 'Chalk'
+              .chat__form__box__input__mask
+                = f.label :image, class: 'chat_form__box__input__mask__image' do
+                  = fa_icon 'image', class: 'icon'
+                  = f.file_field :image, class: 'hidden'
+                = f.label :video, class: 'chat_form__box__input__mask__video' do
+                  = fa_icon 'film', class: 'icon'
+                  = f.file_field :video, class: 'hidden'
+            = f.submit 'Send', class: 'chat_form__box__submit'
+      -break
+  

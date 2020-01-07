@@ -1,0 +1,8 @@
+.contents__tag_box__group_box.hvr-grow
+  = link_to group_messages_path(group) do
+    = image_tag group.image, size: "360x225", alt: "image", class: "contents__tag_box__group_box__image"
+  .contents__tag_box__group_box__text
+    %h2.contents__tag_box__group_box__text__title  ~class name~
+    = link_to group_messages_path(group) do
+      .contents__tag_box__group_box__text__title_name
+        = group.name

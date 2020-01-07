@@ -1,0 +1,40 @@
+.my_page
+  .my_page_header
+    =link_to "Petear", root_path, class: "my_page_header__title"
+    %ul.my_page_header__right
+      -if current_user.id == @user.id
+        %li 
+          = link_to "クラス作成",  new_group_path, class: 'my_page_header__right__list'
+        %li 
+          = link_to "編集", edit_user_path(current_user), class: 'my_page_header__right__list'
+      -else
+        %li.my_page_header__right__list ~ Redirect Message ~
+
+      %li 
+        =link_to "Topへ", root_path, class: 'my_page_header__right__list'
+    
+  .my_page_contents
+    .user_introduce
+      = image_tag @user.image, size: "230x230", alt: "no data", class: 'user_introduce__image'
+      .user_introduce__box
+        .user_introduce__box__name_box
+          = @user.name
+        .user_introduce__box__comment_box
+          = @user.comment
+    
+    %h1.group groups
+    .belongs_to_group
+      -@user.groups.each do |group|
+        = render 'group_box', { group: group }
+    %h1.group follow
+    .belongs_to_group
+      -@followings.each do |following|
+        -following = following.group
+        -if not @user.groups.include?(following)
+          = render 'group_box', { group: following } 
+      
+      
+
+
+
+

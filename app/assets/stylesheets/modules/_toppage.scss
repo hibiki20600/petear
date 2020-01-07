@@ -1,0 +1,184 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.js-animation{
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px);
+  transition: all 1s;
+}
+.js-animation.is-show{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+.toppage.fadeout{
+  opacity: 0;
+  transition-duration: 1.5s;
+  margin-left: 100vw;
+}
+
+.toppage{
+  opacity: 1;
+  background: url(wedding.jpeg), url(jump.jpg), url(44884.jpeg), url(rock.jpeg), url(sport.jpeg), url(family.jpeg);
+  background-repeat:
+    no-repeat, 
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat;
+  background-position:
+  top left, 
+  top right,
+  top,
+  bottom,
+  bottom left,
+  bottom right;
+  background-size: 33.33% 50%;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 10;
+  &__text{
+    font-size: 150px;
+    line-height: 62vh;
+    color: white;
+    text-shadow: 0px 0px 1px #000,
+    4px 4px 2px rgba(0,0,0,0.5);
+    margin-left: 220px;
+    font-family: 'snell roundhand';
+    position: fixed;
+    z-index: 12;
+  }
+  &__sub_text{
+    font-size: 40px;
+    margin-top: 45vh;
+    margin-left: 480px;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 1px #000,
+    4px 4px 2px rgba(0,0,0,0.5);
+    font-family: 'snell roundhand';
+    position: fixed;
+    z-index: 12;
+  }
+
+}
+
+.header{
+  height: 68px;
+  width: 78vw;
+  margin-left: 11vw;
+  background-image: url(Chalkboard.jpg);
+  background-size: cover;
+  background-blend-mode:lighten;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 2;
+  &__title{
+    font-size: 35px;
+    margin-top: 7px;
+    margin-left: 80px;
+    font-family: cursive;
+    color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+  }
+  &__right{
+    font-size: 15px;
+    font-family: cursive;
+    color: rgba(255, 255, 255, 1);
+    margin-right: 35px;
+    display: flex;
+  }
+}
+
+.contents{
+  height: 3700px;
+  width: 78vw;
+  margin-left: 11vw;
+  padding-top: 30px;
+  background-image: url(depositphotos.jpg);
+  background-color: rgba(255, 255, 255, 0.3);
+  background-blend-mode:lighten;
+  background-size: cover;
+  box-sizing: border-box;
+  &__search{
+    height: 30px;
+    width: 60vw;
+    margin-top: 120px;
+    margin-left: 9vw;
+    border-radius: 5px;
+    background-color:#fff;
+    box-sizing: border-box;
+  }
+  &__tag{
+    font-size: 20px;
+    margin-top: 200px;
+    margin-left: 7vw;
+    text-shadow: 1px 1px 2px black;
+    color: white;
+    box-sizing: border-box;
+  }
+  &__tag_box{
+    margin-left: 6vw;
+    margin-right: 6vw;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    overflow: auto;
+    
+
+    &__group_box{
+      background-color: #fff;
+      margin-right: 20px;
+      box-sizing: border-box;
+      
+      &__image{
+        box-sizing: border-box;
+      }
+      &__text{
+        &__title{
+          font-style: italic;
+          text-align: left;
+          margin-left: 30px;
+        }
+        &__title_name{
+          font-style: italic;
+          text-align: right;
+          margin-right: 25px;
+          padding-bottom: 5px;
+          box-sizing: border-box;
+          color: black;
+        }
+      }
+    }
+  }
+}
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+  transform: scale(1.05);
+}
+.toppage_box{
+  width: 100% !important;
+  height: 100%;
+  background: radial-gradient(rgba(212, 0, 255, 0.1), rgba(0, 247, 255, 0.1));
+  z-index: 11;
+  position: fixed;
+}
