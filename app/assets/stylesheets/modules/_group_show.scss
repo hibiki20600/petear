@@ -45,14 +45,15 @@
 }
 
 .show{
-  background-image: url(desk.jpeg);
-  background-size: cover;
+  background-image: url(girls.jpeg);
+  // background-size: 100vw 100vh;
+  background-size: 20vw;
   .show_group{
     &__header{
       height: 75px;
-      width: 70vw;
+      width: 72.5vw;
       margin: 0 auto;
-      background-image: url(Chalkboard.jpg);
+      background-color: rgb(158, 45, 0);
       background-size: cover;
       display: flex;
       justify-content: space-between;
@@ -81,11 +82,10 @@
   
   .member_list{
     height: calc( 100vh - 80px);
-    width: 70vw;
+    width: 72.5vw;
     margin: 0 auto;
     padding: 80px 0 20vh 10vw ;
-    background-color: rgba(255, 255, 255, 0.85);
-    background-blend-mode:lighten;
+    background-color: white;
     background-size: cover;
     box-sizing: border-box;
     overflow: auto;

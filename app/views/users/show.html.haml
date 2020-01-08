@@ -7,11 +7,12 @@
           = link_to "クラス作成",  new_group_path, class: 'my_page_header__right__list'
         %li 
           = link_to "編集", edit_user_path(current_user), class: 'my_page_header__right__list'
+        %li
+        = link_to "ログアウト", destroy_user_session_path, class: 'my_page_header__right__list', method: :delete
+
       -else
         %li.my_page_header__right__list ~ Redirect Message ~
 
-      %li 
-        =link_to "Topへ", root_path, class: 'my_page_header__right__list'
     
   .my_page_contents
     .user_introduce

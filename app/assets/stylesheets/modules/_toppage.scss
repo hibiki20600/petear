@@ -2,6 +2,7 @@ body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 .js-animation{
@@ -97,15 +98,51 @@ body{
   }
 }
 
+.main-toppage-box{
+  background-image: url(unique.jpg);
+  padding-top: 68px;
+  display: flex;
+}
+.left-content{
+  width: 11vw;
+  &__mypage-ball{
+    height: 7vw;
+    width: 7vw;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin: 10px 2vw; 
+    padding-top: 5vw;
+    text-align: center;
+    box-sizing: border-box;
+    position: fixed;
+    background-color: #fff;
+    background-image: url(snoopy.jpeg);
+    background-size: 100%;
+    &--text{
+      width: 6vw;
+      margin: 0 auto;
+      border: 1px solid black;
+      font-family: cursive;
+      background-color: #fff;
+      color: black;
+    }
+  }
+}
+.right-content{
+  width: 11vw;
+  
+}
 .contents{
   height: 3700px;
   width: 78vw;
-  margin-left: 11vw;
-  padding-top: 30px;
-  background-image: url(depositphotos.jpg);
-  background-color: rgba(255, 255, 255, 0.3);
-  background-blend-mode:lighten;
-  background-size: cover;
+  background: url(girl.jpg), url(party.jpg), url(happy.jpg);
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position:
+  top,
+  center,
+  bottom;
+  background-size: 100% 33.33%;
+  opacity: 1;
   box-sizing: border-box;
   &__search{
     height: 30px;
@@ -120,8 +157,8 @@ body{
     font-size: 20px;
     margin-top: 200px;
     margin-left: 7vw;
-    text-shadow: 1px 1px 2px black;
-    color: white;
+    text-shadow: 1px 1px 2px white;
+    color: rgb(0, 0, 0);
     box-sizing: border-box;
   }
   &__tag_box{
@@ -137,7 +174,7 @@ body{
       background-color: #fff;
       margin-right: 20px;
       box-sizing: border-box;
-      
+      border: 2px solid #000;
       &__image{
         box-sizing: border-box;
       }

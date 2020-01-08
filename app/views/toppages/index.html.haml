@@ -17,42 +17,46 @@
         =link_to "新規登録", new_user_registration_path, class: 'header__right__li'
       
       
-
-.contents
-  .contents__search 
-  .contents__tag
-    %h2.js-animation ~動物~
-  .contents__tag_box.js-animation
-    - @animals.each do |group|
-      = render 'group_box', { group: group }
-  
-  .contents__tag
-    %h2.js-animation ~海~
-  .contents__tag_box.js-animation
-    - @sea.each do |group|
-      = render 'group_box', { group: group }
+.main-toppage-box
+  .left-content
+    = link_to user_path(current_user) do
+      .left-content__mypage-ball
+        %p.left-content__mypage-ball--text
+          Mypage
+  .contents
+    .contents__tag
+      %h2.js-animation ~動物~
+    .contents__tag_box.js-animation
+      - @animals.each do |group|
+        = render 'group_box', { group: group }
     
-  .contents__tag
-    %h2.js-animation ~キャンプ~
-  .contents__tag_box.js-animation
-    - @camp.each do |group|
-      = render 'group_box', { group: group }
-
-  .contents__tag
-    %h2.js-animation ~森~
-  .contents__tag_box.js-animation
-    - @forest.each do |group|
-      = render 'group_box', { group: group }
-   
-  .contents__tag
-    %h2.js-animation ~食べ物~
-  .contents__tag_box.js-animation
-    - @foods.each do |group|
-      = render 'group_box', { group: group }
+    .contents__tag
+      %h2.js-animation ~海~
+    .contents__tag_box.js-animation
+      - @sea.each do |group|
+        = render 'group_box', { group: group }
+      
+    .contents__tag
+      %h2.js-animation ~キャンプ~
+    .contents__tag_box.js-animation
+      - @camp.each do |group|
+        = render 'group_box', { group: group }
   
-  .contents__tag
-    %h2.js-animation ~Your group~
-  .contents__tag_box.js-animation
-    - @yours.each do |group|
-      = render 'group_box', { group: group }
-  
+    .contents__tag
+      %h2.js-animation ~森~
+    .contents__tag_box.js-animation
+      - @forest.each do |group|
+        = render 'group_box', { group: group }
+     
+    .contents__tag
+      %h2.js-animation ~食べ物~
+    .contents__tag_box.js-animation
+      - @foods.each do |group|
+        = render 'group_box', { group: group }
+    
+    .contents__tag
+      %h2.js-animation ~Your group~
+    .contents__tag_box.js-animation
+      - @yours.each do |group|
+        = render 'group_box', { group: group }
+  .right-content
