@@ -52,9 +52,10 @@
       - else
         = render 'member', { user: user }
   
-    %h1.follower Follower
-    -@group.followers.each do |follower|
-      -unless @group.member?(follower)
-        = render 'follower', { user: follower }
+    -if @group.followers.length != 0
+      %h1.follower Follower
+      -@group.followers.each do |follower|
+        -unless @group.member?(follower)
+          = render 'follower', { user: follower }
       
     

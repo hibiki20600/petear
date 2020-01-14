@@ -29,6 +29,7 @@
           %p.left-content__regist-ball--text
             新規登録
     -else
+      .mypage-line
       = link_to user_path(current_user) do
         .left-content__mypage-ball
           %p.left-content__mypage-ball--text
@@ -80,6 +81,7 @@
     //   - @babies.each do |group|
     //     = render 'group_box', { group: group }
   .right-content
+    .search-line
     = link_to search_toppages_path do
       .right-content__search-ball
         %p.right-content__search-ball--text

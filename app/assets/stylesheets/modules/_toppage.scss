@@ -104,7 +104,7 @@
     width: 7vw;
     border-radius: 50%;
     border: 1px solid black;
-    margin: 3vh 6vw; 
+    margin: calc( 7vw + 3vh ) 6vw; 
     padding-top: 5vw;
     text-align: center;
     box-sizing: border-box;
@@ -276,4 +276,18 @@
   margin-top: 20vh;
   margin-left: 25vw;
   margin-bottom: 5vh;
+}
+.search-line{
+  margin-top: -68px;
+  margin-left: 1.5vw;
+  height: calc( 7vw + 3vh + 68px );
+  position: fixed;
+  border: 0.5px solid black;
+}
+.mypage-line{
+  margin-top: -68px;
+  margin-left: 9.5vw;
+  height: calc( 7vw + 3vh + 68px );
+  position: fixed;
+  border: 0.5px solid black;
 }

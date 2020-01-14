@@ -50,6 +50,11 @@
             width: 245px;
             margin: 0 10px;
             display: inline-block;
+            &__text{
+              text-align: right;
+              color: black;
+              background-color: #fff;
+            }
           }
         }
       }
@@ -166,7 +171,7 @@
 }
 
 .keyframe3{
-  animation: anim_s linear 3s infinite;
+  animation: anim_s linear 2.5s infinite;
 }
 @keyframes anim_s{
   0%{
