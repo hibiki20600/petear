@@ -23,7 +23,7 @@
       .group_field__label
         = f.label :tag
       .group_field__select_box
-        = f.select :tag, ['animal', 'sea', 'camp', 'forest', 'food', 'your group']
+        = f.select :tag, [['友達', 'friend'], ['家族', 'family'], ['同級生', 'classmate'], ['OO仲間', 'mate'], ['高校生', 'high'], ['中学生', 'middle']]
 
     %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}
     = f.hidden_field :owner_id, value: current_user.id

@@ -14,4 +14,5 @@ class GoodsController < ApplicationController
     
   end
 
+
 end

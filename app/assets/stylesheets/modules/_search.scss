@@ -1,0 +1,185 @@
+.search-box{
+  background-image: url(flame.jpg);
+  background-size: 100% 100% ;
+  padding-top: 30px;
+  &__main{
+    display: flex;
+    &__top-ball{
+      height: 7vw;
+      width: 7vw;
+      border-radius: 50%;
+      border: 1px solid black;
+      margin: 65vh 87vw; 
+      padding-top: 5vw;
+      text-align: center;
+      box-sizing: border-box;
+      position: fixed;
+      background-color: #fff;
+      background-image: url(antique.jpeg);
+      background-size: 100%;
+      &--text{
+        width: 6vw;
+        margin: 0 auto;
+        font-family: cursive;
+        background-color: rgb(255, 255, 255);
+        color: black;
+      }
+    }
+    .search-center{
+      height: calc( 100vh - 108px );
+      width: 60vw;
+      margin: 0 auto;
+      margin-bottom: 30px;
+      overflow: auto;
+      &--user{
+        height: calc( 100vh - 108px );
+        width: 60vw;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        overflow: auto;
+      }
+      &--message{
+        height: calc( 100vh - 108px );
+        width: 60vw;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        overflow: auto;
+        &__box{
+          &__li{
+            height: 100%;
+            width: 245px;
+            margin: 0 10px;
+            display: inline-block;
+          }
+        }
+      }
+      &--group{
+        height: calc( 100vh - 108px );
+        width: 60vw;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        overflow: auto;
+        &__box{
+          &__li{
+            height: 100%;
+            width: 245px;
+            margin: 0 10px;
+            display: inline-block;
+            &__text{
+              text-align: right;
+              color: black;
+              background-color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.search-header{
+  width: 60vw;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.search-text-box{
+  &__user{
+    padding-left: 10px;
+    width: 40vw;
+    height: 24px;
+    margin-top: 20px;
+    margin-left: 10vw;
+  }
+  &__group{
+    padding-left: 10px;
+    width: 40vw;
+    height: 24px;
+    margin-top: 20px;
+    margin-left: 10vw;
+  }
+  &__message{
+    padding-left: 10px;
+    width: 40vw;
+    height: 24px;
+    margin-top: 20px;
+    margin-left: 10vw;
+  }
+
+}
+.user-btn{
+  width: 9vw;
+  height: 6vw;
+  border-radius: 50%;
+  background-image: url(mikky.jpg);
+  background-size: 110% 130%;
+  padding-top: 48px;
+  color: white;
+  text-shadow: 1px 1px black;
+  font-size: 24px;
+  font-family: cursive;
+}
+.group-btn{
+  width: 9vw;
+  height: 6vw;
+  border-radius: 50%;
+  background-image: url(rabbit3.jpeg);
+  background-size: 100% 150%;
+  padding-top: 48px;
+  font-size: 24px;
+  color: white;
+  text-shadow: 1px 1px black;
+  font-family: cursive;
+}
+.message-btn{
+  width: 9vw;
+  height: 6vw;
+  border-radius: 50%;
+  background-image: url(hurry.jpeg);
+  background-size: 100% 135%;
+  padding-top: 48px;
+  color: white;
+  text-shadow: 1px 1px black;
+  font-size: 24px;
+  font-family: cursive;
+}
+
+.search-center--user__box{
+  &__li{
+    height: 80px;
+    width: 40vw;
+    margin-left: 10vw;
+    background-color: #fff;
+    &__image{
+      border-radius: 50%;
+    }
+  }
+}
+
+.search-center--message__box{
+  background-color: #fff;
+}
+
+.hidden{
+  display: none;
+}
+
+.keyframe3{
+  animation: anim_s linear 3s infinite;
+}
+@keyframes anim_s{
+  0%{
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+  

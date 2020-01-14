@@ -1,9 +1,14 @@
 class GroupUsersController < ApplicationController
 
   def create
+    binding.pry
     subscribe = GroupUser.create( sub_params )
-    if subscribe.save
-      redirect_to :back
+##    if subscribe.save
+##      follow = GroupFollower.where( group_id: params[:group_user][:group_id], follower_id: params[:group_user][:user_id] ).first
+##      if follow
+##        follow.destroy
+##      end
+    redirect_to :back
     end
   end
 

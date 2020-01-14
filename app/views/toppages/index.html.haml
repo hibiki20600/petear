@@ -8,8 +8,8 @@
     -if user_signed_in? 
       %li 
         = link_to "#{current_user.name}", user_path(current_user), class: 'header__right__li'
-      %li
-        = link_to "ログアウト", destroy_user_session_path, class: 'header__right__li', method: :delete
+      //%li
+      //  = link_to "ログアウト", destroy_user_session_path, class: 'header__right__li', method: :delete
     -else
       %li
         = link_to "ログイン", new_user_session_path, class: 'header__right__li'
@@ -19,44 +19,75 @@
       
 .main-toppage-box
   .left-content
-    = link_to user_path(current_user) do
-      .left-content__mypage-ball
-        %p.left-content__mypage-ball--text
-          Mypage
+    -unless user_signed_in?
+      = link_to new_user_session_path do
+        .left-content__login-ball
+          %p.left-content__login-ball--text
+            ログイン
+      = link_to new_user_registration_path do
+        .left-content__regist-ball
+          %p.left-content__regist-ball--text
+            新規登録
+    -else
+      = link_to user_path(current_user) do
+        .left-content__mypage-ball
+          %p.left-content__mypage-ball--text
+            Mypage
   .contents
     .contents__tag
-      %h2.js-animation ~動物~
+      %h2.js-animation ~友達~
     .contents__tag_box.js-animation
-      - @animals.each do |group|
+      - @friends.each do |group|
         = render 'group_box', { group: group }
     
     .contents__tag
-      %h2.js-animation ~海~
+      %h2.js-animation ~家族~
     .contents__tag_box.js-animation
-      - @sea.each do |group|
+      - @family.each do |group|
         = render 'group_box', { group: group }
-      
+
     .contents__tag
-      %h2.js-animation ~キャンプ~
+      %h2.js-animation ~○○仲間~
     .contents__tag_box.js-animation
-      - @camp.each do |group|
+      - @mate.each do |group|
         = render 'group_box', { group: group }
-  
+
     .contents__tag
-      %h2.js-animation ~森~
+      %h2.js-animation ~同級生~
     .contents__tag_box.js-animation
-      - @forest.each do |group|
+      - @classmate.each do |group|
         = render 'group_box', { group: group }
      
     .contents__tag
-      %h2.js-animation ~食べ物~
+      %h2.js-animation ~高校生~
     .contents__tag_box.js-animation
-      - @foods.each do |group|
+      - @high.each do |group|
         = render 'group_box', { group: group }
     
     .contents__tag
-      %h2.js-animation ~Your group~
+      %h2.js-animation ~中学生~
     .contents__tag_box.js-animation
-      - @yours.each do |group|
+      - @middle.each do |group|
         = render 'group_box', { group: group }
+    // .contents__tag
+    //   %h2.js-animation ~少学生~
+    // .contents__tag_box.js-animation
+    //   - @elements.each do |group|
+    //     = render 'group_box', { group: group }
+    // .contents__tag
+    //   %h2.js-animation ~赤ちゃん~
+    // .contents__tag_box.js-animation
+    //   - @babies.each do |group|
+    //     = render 'group_box', { group: group }
   .right-content
+    = link_to search_toppages_path do
+      .right-content__search-ball
+        %p.right-content__search-ball--text
+          Search
+.toppage-footer
+  Petearは、アルバムです。
+  %br
+  たくさんの人と好きな物を一緒に共有したり、大切な人との思い出を残したり、使い方は自由です。
+  %br
+  皆さんが幸せを思い出せるように、
+  そしてPetearが幸せで溢れる事を願います。

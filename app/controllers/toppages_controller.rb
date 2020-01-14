@@ -1,13 +1,40 @@
 class ToppagesController < ApplicationController
   def index
-    @animals = Group.where(tag: 'animal').order("created_at DESC")
-    @sea = Group.where(tag: 'sea').order("created_at DESC")
-    @camp = Group.where(tag: 'camp').order("created_at DESC")
-    @forest = Group.where(tag: 'forest').order("created_at DESC")
-    @foods = Group.where(tag: 'food').order("created_at DESC")
-    @yours = Group.where(tag: 'your group').order("created_at DESC")
+    @friends = Group.where(tag: 'friend').order("created_at DESC")
+    @family = Group.where(tag: 'family').order("created_at DESC")
+    @classmate = Group.where(tag: 'classmate').order("created_at DESC")
+    @mate = Group.where(tag: 'mate').order("created_at DESC")
+    @high = Group.where(tag: 'high').order("created_at DESC")
+    @middle = Group.where(tag: 'middle').order("created_at DESC")
+    #@elements = Group.where(tag: 'element').order("created_at DESC")
+    #@babies = Group.where(tag: 'baby').order("created_at DESC")
   end
 
-  
+  def search
+    @messages = Message.order("created_at DESC").first(100)
+    return nil if params[:user_keyword] == ""
+    @users = User.where(['name LIKE ?', "%#{params[:user_keyword]}%"] ).where.not(id: current_user.id)
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
 
+  def search1
+    return nil if params[:group_keyword] == ""
+    @groups = Group.where(['name LIKE ?', "%#{params[:group_keyword]}%"] )
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
+  def search2
+    return nil if params[:message_keyword] == ""
+    @messages = Message.where(['message LIKE ?', "%#{params[:message_keyword]}%"] )
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
 end

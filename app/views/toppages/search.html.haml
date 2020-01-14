@@ -1,0 +1,34 @@
+.search-box
+  .search-header
+    %button.user-btn
+      user
+    %button.group-btn
+      group
+    %button.message-btn
+      message
+
+  .search-box__main
+    = link_to root_path do
+      .search-box__main__top-ball
+        %p.search-box__main__top-ball--text
+          Topへ
+    .search-center
+      -@messages.each do |message|
+        -if message.image == nil
+          = link_to group_messages_path(message.group) do
+            = video_tag message.video_url.to_s, size: "200x125", loop: true, controls: true, id: "search-center__message"
+        -else
+          = link_to group_messages_path(message.group) do
+            =image_tag message.image, size: "284x178", class: "search-center__message"
+
+    .search-center--user.hidden
+      %input.search-text-box__user{ type: "text", placeholder: "Search User" }
+      .search-center--user__box
+
+    .search-center--group.hidden
+      %input.search-text-box__group{ type: "text", placeholder: "Search Group" }
+      .search-center--group__box
+
+    .search-center--message.hidden
+      %input.search-text-box__message{ type: "text", placeholder: "Search Message" }
+      .search-center--message__box
