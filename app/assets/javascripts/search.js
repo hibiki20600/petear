@@ -1,10 +1,11 @@
 $( function(){
 
-  function AddUser(image, id) {
+  function AddUser(image, name, id) {
     var html = `
       <div class="search-center--user__box__li">
         <a href = "/users/${id}" >
-          <img alt="image" class="search-center--user__box__li__image" src=${image} width="70" height="70"></img>
+          <img alt="image" class="search-center--user__box__li__image" src=${image} width="100" height="100"></img>
+          <p class="search-center--user__box__li__text">${name}</p>
         </a>
       </div>
     `
@@ -83,7 +84,7 @@ $( function(){
     .done(function(users) {
       $(".search-center--user__box__li").remove();
       users.forEach(function(user){
-        AddUser(user.image, user.id );
+        AddUser(user.image, user.name, user.id );
       })
     })
 

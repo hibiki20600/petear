@@ -18,7 +18,7 @@
 
 .toppage{
   opacity: 1;
-  background: url(wedding.jpeg), url(jump.jpg), url(44884.jpeg), url(rock.jpeg), url(sport.jpeg), url(family.jpeg);
+  background: image-url("wedding.jpeg"), image-url("jump.jpg"), image-url("44884.jpeg"), image-url("rock.jpeg"), image-url("sport.jpeg"), image-url("family.jpeg");
   background-repeat:
     no-repeat, 
     no-repeat,
@@ -67,7 +67,7 @@
   height: 68px;
   width: 78vw;
   margin-left: 11vw;
-  background-image: url(Chalkboard.jpg);
+  background-image: image-url("Chalkboard.jpg");
   background-size: cover;
   background-blend-mode:lighten;
   display: flex;
@@ -93,7 +93,7 @@
 }
 
 .main-toppage-box{
-  background-image: url(unique.jpg);
+  background-image: image-url("unique.jpg");
   padding-top: 68px;
   display: flex;
 }
@@ -110,7 +110,7 @@
     box-sizing: border-box;
     position: fixed;
     background-color: #fff;
-    background-image: url(snoopy.jpeg);
+    background-image: image-url("snoopy.jpeg");
     background-size: 100%;
     &--text{
       width: 6vw;
@@ -132,7 +132,7 @@
     box-sizing: border-box;
     position: fixed;
     background-color: #fff;
-    background-image: url(boy.jpeg);
+    background-image: image-url("boy.jpeg");
     background-size: 100%;
     &--text{
       width: 6vw;
@@ -154,7 +154,7 @@
     box-sizing: border-box;
     position: fixed;
     background-color: #fff;
-    background-image: url(girl2.jpeg);
+    background-image: image-url("girl2.jpeg");
     background-size: 100%;
     &--text{
       width: 6vw;
@@ -179,7 +179,7 @@
     box-sizing: border-box;
     position: fixed;
     background-color: #fff;
-    background-image: url(sharock.jpeg);
+    background-image: image-url("sharock.jpeg");
     background-size: 100%;
     &--text{
       width: 6vw;
@@ -195,7 +195,7 @@
 .contents{
   height: 3700px;
   width: 78vw;
-  background: url(girl.jpg), url(party.jpg), url(happy.jpg);
+  background: image-url("girl.jpg"), image-url("party.jpg"), image-url("happy.jpg");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position:
   top,
@@ -208,9 +208,12 @@
     font-size: 20px;
     margin-top: 200px;
     margin-left: 7vw;
+    margin-right: 7vw;
     text-shadow: 1px 1px 2px white;
     color: rgb(0, 0, 0);
     box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
   }
   &__tag_box{
     margin-left: 6vw;
@@ -290,4 +293,10 @@
   height: calc( 7vw + 3vh + 68px );
   position: fixed;
   border: 0.5px solid black;
+}
+.list-btn{
+  margin-top: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 12px;
 }

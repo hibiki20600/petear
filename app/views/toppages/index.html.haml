@@ -37,36 +37,42 @@
   .contents
     .contents__tag
       %h2.js-animation ~友達~
+      %button.list-btn.js-animation 一覧 >>
     .contents__tag_box.js-animation
       - @friends.each do |group|
         = render 'group_box', { group: group }
     
     .contents__tag
       %h2.js-animation ~家族~
+      %button.list-btn.js-animation 一覧 >>
     .contents__tag_box.js-animation
       - @family.each do |group|
         = render 'group_box', { group: group }
 
     .contents__tag
       %h2.js-animation ~○○仲間~
+      %button.list-btn.js-animation 一覧 >>
     .contents__tag_box.js-animation
       - @mate.each do |group|
         = render 'group_box', { group: group }
 
     .contents__tag
       %h2.js-animation ~同級生~
+      %button.list-btn.js-animation 一覧 >>
     .contents__tag_box.js-animation
       - @classmate.each do |group|
         = render 'group_box', { group: group }
      
     .contents__tag
       %h2.js-animation ~高校生~
+      %button.list-btn.js-animation 一覧 >>
     .contents__tag_box.js-animation
       - @high.each do |group|
         = render 'group_box', { group: group }
     
     .contents__tag
       %h2.js-animation ~中学生~
+      %button.list-btn.js-animation 一覧 >>
     .contents__tag_box.js-animation
       - @middle.each do |group|
         = render 'group_box', { group: group }

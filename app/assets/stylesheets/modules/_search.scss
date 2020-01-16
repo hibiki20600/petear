@@ -1,5 +1,5 @@
 .search-box{
-  background-image: url(flame.jpg);
+  background-image: image-url("flame.jpg");
   background-size: 100% 100% ;
   padding-top: 30px;
   &__main{
@@ -15,7 +15,7 @@
       box-sizing: border-box;
       position: fixed;
       background-color: #fff;
-      background-image: url(antique.jpeg);
+      background-image: image-url("antique.jpeg");
       background-size: 100%;
       &--text{
         width: 6vw;
@@ -37,6 +37,23 @@
         margin: 0 auto;
         margin-bottom: 30px;
         overflow: auto;
+        &__box{
+          width: 40vw;
+          margin-left: 10vw;
+          &__li{
+            background-color: rgba(255, 255, 255, 0);
+            display: inline-block;
+            margin-top: 20px;
+            margin-left: 43px;
+            margin-right: 43px;
+            &__image{
+              border-radius: 50%;
+            }
+            &__text{
+              text-align: center;
+            }
+          }
+        }
       }
       &--message{
         height: calc( 100vh - 108px );
@@ -45,6 +62,7 @@
         margin-bottom: 30px;
         overflow: auto;
         &__box{
+          background-color: rgba(255, 255, 255, 0);
           &__li{
             height: 100%;
             width: 245px;
@@ -52,6 +70,7 @@
             display: inline-block;
             &__text{
               text-align: right;
+              padding-right: 10px;
               color: black;
               background-color: #fff;
             }
@@ -117,7 +136,7 @@
   width: 9vw;
   height: 6vw;
   border-radius: 50%;
-  background-image: url(mikky.jpg);
+  background-image: image-url("mikky.jpg");
   background-size: 110% 130%;
   padding-top: 48px;
   color: white;
@@ -129,7 +148,7 @@
   width: 9vw;
   height: 6vw;
   border-radius: 50%;
-  background-image: url(rabbit3.jpeg);
+  background-image: image-url("rabbit3.jpeg");
   background-size: 100% 150%;
   padding-top: 48px;
   font-size: 24px;
@@ -141,7 +160,7 @@
   width: 9vw;
   height: 6vw;
   border-radius: 50%;
-  background-image: url(hurry.jpeg);
+  background-image: image-url("hurry.jpeg");
   background-size: 100% 135%;
   padding-top: 48px;
   color: white;
@@ -150,21 +169,6 @@
   font-family: cursive;
 }
 
-.search-center--user__box{
-  &__li{
-    height: 80px;
-    width: 40vw;
-    margin-left: 10vw;
-    background-color: #fff;
-    &__image{
-      border-radius: 50%;
-    }
-  }
-}
-
-.search-center--message__box{
-  background-color: #fff;
-}
 
 .hidden{
   display: none;
@@ -187,4 +191,3 @@
     transform: rotate(0deg);
   }
 }
-  

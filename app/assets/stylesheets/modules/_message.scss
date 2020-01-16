@@ -35,13 +35,13 @@ li {
 
 .chat{
   position: relative;
-  background-image: url(book.jpeg);
+  background-image: image-url("book.jpeg");
   background-size: cover;
   .chat_header{
     height: 75px;
     width: 70vw;
     margin: 0 auto;
-    background-image: url(Chalkboard.jpg);
+    background-image: image-url("Chalkboard.jpg");
     background-size: cover;
     display: flex;
     justify-content: space-between;
@@ -234,4 +234,12 @@ li {
 #mv{
   border: 5px solid white;
   border-top: none;
+}
+.message-created_at{
+  font-size: 12px;
+  margin-top: 14px;
+  width: 100%;
+  text-align: right;
+  margin-right: 15px;
+  color: rgba(65, 64, 64, 0.692)
 }

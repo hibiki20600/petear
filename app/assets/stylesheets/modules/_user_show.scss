@@ -1,6 +1,6 @@
 //showの部分
 .my_page{
-  background-image: url(pencil.jpeg);
+  background-image: image-url("pencil.jpeg");
   background-size: 100vw 100vh;
   background-blend-mode:lighten;
   .my_page_header{
