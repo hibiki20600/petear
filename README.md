@@ -1,7 +1,7 @@
 # README
 ## APPRICATION
-### TOPPAGE
-![DEMO](https://user-images.githubusercontent.com/57179721/72507773-dc8a1a00-3887-11ea-9b29-dc6024d17615.png)
-***詳しくはこちらで:***
-:point_right:
-https://gyazo.com/399e3163ac7561543c444fc2bd0cb584
+### toppage
+![DEMO](https://user-images.githubusercontent.com/57179721/72508470-0db71a00-3889-11ea-85a9-f562938282ce.gif)
+
+### message
+![DEMO](https://user-images.githubusercontent.com/57179721/72508561-3a6b3180-3889-11ea-9946-ef47de060367.gif)
