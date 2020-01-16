@@ -1,5 +1,5 @@
 # README
-## APPRICATION
+## Apprication
 
 ### Toppage
 ![DEMO](https://user-images.githubusercontent.com/57179721/72518394-97baaf00-3898-11ea-813f-2aed731a002e.gif)
