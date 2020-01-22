@@ -39,4 +39,21 @@ $( function() {
       $(this).removeClass('js-border');
     });
   
+  // $(function() {
+  //   $('#view').tridView({useMouse: true});
+  //   $('#box').trid({z:-1000});
+  //   $('#box1').trid({rx:90,y:-600});
+  //   $('#box2').trid({rx:-90,y:600});
+  //   $('#box3').trid({ry:90,x:600});
+  //   $('#box4').trid({ry:-90,x:-600});
+  //   $('#box5').trid({rz:180,z:-600});
+  //   $('#box6').trid({rz:0,z:600});
+  //   a = 0;
+  //   window.setInterval(function() {
+  //     $('#box').trid({rz:a+=0.1,rx:a*0.77,ry:a*1.13});
+  //     $.tridTick();
+  //   },1);
+  // });
+
+    
 })
