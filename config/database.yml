@@ -52,6 +52,3 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: petear_production
-  username: petear
-  password:<%= ENV['PETEAR_DATABASE_PASSWORD'] %>
