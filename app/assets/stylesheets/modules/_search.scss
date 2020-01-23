@@ -2,7 +2,7 @@
   background-image: image-url("flame.jpg");
   background-size: 100% 100% ;
   padding-top: 30px;
-
+  animation: big linear 1s;
   &__main{
     display: flex;
     &__top-ball{
@@ -32,6 +32,7 @@
       margin: 0 auto;
       margin-bottom: 30px;
       overflow: auto;
+      
       &--user{
         height: calc( 100vh - 108px );
         width: 60vw;
@@ -62,6 +63,7 @@
         margin: 0 auto;
         margin-bottom: 30px;
         overflow: auto;
+        
         &__box{
           background-color: rgba(255, 255, 255, 0);
           &__li{
@@ -144,6 +146,7 @@
   text-shadow: 1px 1px black;
   font-size: 24px;
   font-family: cursive;
+  animation: turn linear 1.5s;
 }
 .group-btn{
   width: 9vw;
@@ -156,6 +159,7 @@
   color: white;
   text-shadow: 1px 1px black;
   font-family: cursive;
+  animation: turn linear 1.5s;
 }
 .message-btn{
   width: 9vw;
@@ -168,6 +172,7 @@
   text-shadow: 1px 1px black;
   font-size: 24px;
   font-family: cursive;
+  animation: turn linear 1.5s;
 }
 
 
@@ -175,21 +180,34 @@
   display: none;
 }
 
-.keyframe3{
-  animation: anim_s linear 2.5s infinite;
-}
-@keyframes anim_s{
+
+
+@keyframes turn{
   0%{
-    transform: rotate(0deg);
+    transform: rotateY(0deg);
+    opacity: 0;
   }
-  25% {
-    transform: rotate(-5deg);
+  25%{
+    transform: rotateY(180deg);
+    opacity: 0
   }
-  75% {
-    transform: rotate(5deg);
+  50%{
+    transform: rotateY(360deg);
+  }
+  75%{
+    transform: rotateY(180deg);
   }
   100%{
-    transform: rotate(0deg);
+    transform: rotateY(360deg);
+    opacity: 1;
   }
-
 }
+@keyframes big{
+  0%{
+    opacity: 0.2;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+

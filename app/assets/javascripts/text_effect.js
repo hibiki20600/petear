@@ -52,14 +52,24 @@ $( function(){
       sequence: true
     }
   });
-  $(".follower").textillate({
+  $(".group").textillate({
+    loop: true,
     in:{
-      effect: 'swing',
-      delay: 40,
+      effect: 'fadeInLeft',
+      sequence: true
+    },
+    out:{
+      effect: 'hinge',
       sequence: true
     }
   });
-  
+  $(".header__title").textillate({
+    in:{
+      effect: 'rotateInUpRight',
+      delay: 100,
+      reverse: true
+    }
+  });
   $(".chat_header__right__li").textillate({
     in:{
       effect: 'bounceIn',
@@ -67,5 +77,5 @@ $( function(){
     }
   });
 
-
+  
 })

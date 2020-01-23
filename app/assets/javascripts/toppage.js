@@ -21,6 +21,7 @@ $( function() {
       var elemY = scrollY + elemClientRect.top;
       if(scrollY + windowH - showTiming > elemY) {
         element[i].classList.add('is-show');
+        
       } else if(scrollY + windowH < elemY) {
         // 上にスクロールして再度非表示にする
         element[i].classList.remove('is-show');
@@ -39,5 +40,34 @@ $( function() {
       $(this).removeClass('js-border');
     });
   
- 
+    // 画像表示
+    function photoFade() {
+      $('#photo li:first').clone(true).appendTo('#photo');
+      $('#photo li:last').css({ opacity:'0'})
+      $('#photo li:last').animate({ opacity:'1' },{ duration:1500, complete:function(){
+      $('#photo li:first').remove()
+      }
+      });
+     }
+    setInterval(function(){
+      photoFade();
+    }, 4000);
+  
+    // テキスト
+    $(".contents__tag_box__group_box__text__title_name").textillate({
+      initialDelay: 4000,
+      loop: true,
+      in:{
+        effect: 'swing',
+        sequence: true
+      },
+      out:{
+        effect: 'swing',
+        reverse: true
+      }
+    });
+
+  
+
+
 })

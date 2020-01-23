@@ -28,9 +28,20 @@ li {
   &_red{
     color: red;
     font-size: 16px;
+    animation: pounding 0.2s linear;
   }
 }
-
+@keyframes pounding{
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
 
 
 .chat{

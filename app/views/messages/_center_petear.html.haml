@@ -16,10 +16,10 @@
       = message.message
     .text_box__icon
       -if current_user.alreadyGood?(message)
-        = link_to group_message_goods_toggle_path(group_id: @group.id, message_id: message.id, user_id: current_user.id), class: "link_good", remote: true do
+        = link_to group_message_goods_toggle_path(group_id: @group.id, message_id: message.id, user_id: current_user.id), class: "link_good_r", remote: true do
           = fa_icon 'heart', class: 'heart_icon_red'
       -else
         = link_to group_message_goods_toggle_path(group_id: @group.id, message_id: message.id, user_id: current_user.id), class: "link_good", remote: true do
           = fa_icon 'heart', class: 'heart_icon'
-      .text_box__good_sum
+      .text_box__good_sum{value: message.goods.length}
         =message.goods.length
