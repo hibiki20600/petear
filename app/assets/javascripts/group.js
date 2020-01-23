@@ -3,7 +3,8 @@ $( function() {
   function AddImage(Url){
     var html = 
       `<img alt="image" class="group_image_field__label__image" src=${Url} width="360" height="225">`
-      $('.group_image_field__label').append(html);
+      
+    $('.group_image_field__label').append(html);
   }
   
   $('.hidden-image').on('change', function(e){
