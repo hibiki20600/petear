@@ -8,8 +8,6 @@
     -if user_signed_in? 
       %li 
         = link_to "#{current_user.name}", user_path(current_user), class: 'header__right__li'
-      //%li
-      //  = link_to "ログアウト", destroy_user_session_path, class: 'header__right__li', method: :delete
     -else
       %li
         = link_to "ログイン", new_user_session_path, class: 'header__right__li'
@@ -76,16 +74,6 @@
     .contents__tag_box.js-animation
       - @middle.each do |group|
         = render 'group_box', { group: group }
-    // .contents__tag
-    //   %h2.js-animation ~少学生~
-    // .contents__tag_box.js-animation
-    //   - @elements.each do |group|
-    //     = render 'group_box', { group: group }
-    // .contents__tag
-    //   %h2.js-animation ~赤ちゃん~
-    // .contents__tag_box.js-animation
-    //   - @babies.each do |group|
-    //     = render 'group_box', { group: group }
   .right-content
     .search-line
     = link_to search_toppages_path do
