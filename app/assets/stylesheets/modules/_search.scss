@@ -2,6 +2,7 @@
   background-image: image-url("flame.jpg");
   background-size: 100% 100% ;
   padding-top: 30px;
+
   &__main{
     display: flex;
     &__top-ball{
@@ -190,4 +191,5 @@
   100%{
     transform: rotate(0deg);
   }
+
 }
