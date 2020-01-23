@@ -38,11 +38,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'faker'
-  gem 'capistrano'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano3-unicorn'
+  gem 'sqlite3'
 end
 
 group :development do
@@ -60,24 +56,23 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 
 group :development do 
-     gem 'rspec'
+     
 end
 
 group :test do 
-     gem 'rspec'
 end
 
 group :production do 
-     gem 'unicorn', '5.4.1'
+     gem 'pg'
 end
 
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
 gem "font-awesome-rails"
 gem 'carrierwave'
-gem 'fog-aws'
 gem 'mini_magick'
 gem 'pry-rails'
 
 group :test, :development do
   gem 'capybara'
+  gem 'rspec'
 end 
