@@ -41,6 +41,11 @@ $( function() {
     });
   
     // 画像表示
+    $(".photo").hover(function(){
+      $(this).attr("id", "photo");
+    }, function(){
+      $(this).attr("id", "nil");
+    })
     function photoFade() {
       $('#photo li:first').clone(true).appendTo('#photo');
       $('#photo li:last').css({ opacity:'0'})
@@ -51,7 +56,7 @@ $( function() {
      }
     setInterval(function(){
       photoFade();
-    }, 4000);
+    }, 3000);
   
     // テキスト
     $(".contents__tag_box__group_box__text__title_name").textillate({

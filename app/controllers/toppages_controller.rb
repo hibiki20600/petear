@@ -6,7 +6,7 @@ class ToppagesController < ApplicationController
     @mate = Group.where(tag: 'mate').order("RAND()")
     @high = Group.where(tag: 'high').order("RAND()")
     @middle = Group.where(tag: 'middle').order("RAND()")
-
+    
   end
 
   def search

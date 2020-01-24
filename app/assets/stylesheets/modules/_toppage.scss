@@ -107,7 +107,7 @@
     width: 7vw;
     border-radius: 50%;
     border: 1px solid black;
-    margin: calc( 7vw + 3vh ) 6vw; 
+    margin: calc( 5vw + 3vh ) 6vw; 
     padding-top: 5vw;
     text-align: center;
     box-sizing: border-box;
@@ -176,7 +176,7 @@
     width: 7vw;
     border-radius: 50%;
     border: 1px solid black;
-    margin: calc( 7vw + 3vh ) -2vw; 
+    margin: calc( 10vw + 3vh ) -2vw; 
     padding-top: 5vw;
     text-align: center;
     box-sizing: border-box;
@@ -287,14 +287,14 @@
 .search-line{
   margin-top: -68px;
   margin-left: 1.5vw;
-  height: calc( 7vw + 3vh + 68px );
+  height: calc( 10vw + 3vh + 68px );
   position: fixed;
   border: 0.5px solid black;
 }
 .mypage-line{
   margin-top: -68px;
   margin-left: 9.5vw;
-  height: calc( 7vw + 3vh + 68px );
+  height: calc( 5vw + 3vh + 68px );
   position: fixed;
   border: 0.5px solid black;
 }
@@ -305,13 +305,30 @@
   font-size: 12px;
 }
 
-#photo { 
+.photo { 
   width: 360px;
   height: 225px;
   position:relative; 
 }
-#photo li { 
+.photo li { 
   margin: 0;
   padding: 0;
   position:absolute; 
+}
+.mypage-pendulum {
+  position: fixed;
+  transform-origin: 9.5vw -68px;
+  animation: swing linear 3s infinite;
+}
+.search-pendulum{
+  position: fixed;
+  transform-origin: 1.5vw -68px;
+  animation: swing linear 3.2s infinite;
+}
+@keyframes swing {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-3deg); }
+  100% { transform: rotate(0deg); }
 }

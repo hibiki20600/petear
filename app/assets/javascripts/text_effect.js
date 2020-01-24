@@ -77,5 +77,17 @@ $( function(){
     }
   });
 
+  $(".belongs_to_group__box__text__title_name").textillate({
+    initialDelay: 4000,
+    loop: true,
+    in:{
+      effect: 'swing',
+      sequence: true
+    },
+    out:{
+      effect: 'swing',
+      reverse: true
+    }
+  });
   
 })
