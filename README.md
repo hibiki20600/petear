@@ -3,6 +3,10 @@
 #### たくさんの人の思い出を共有できる グループトーク公開アプリ Petear(ピーティア)。
 #### たくさんの人に自分たちの思い出をみて楽しんでもらい、自分たちでも思い出を振り返れるアプリにしたいと思っております。
 
+## 使用言語
+### HTML&CSS(haml&scss) Javascript Ruby 
+## フレームワーク
+### Rails
 
 ## Toppage
 ![DEMO](https://user-images.githubusercontent.com/57179721/72518394-97baaf00-3898-11ea-813f-2aed731a002e.gif)
