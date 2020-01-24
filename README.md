@@ -12,6 +12,7 @@
 ## Message
 ![DEMO](https://user-images.githubusercontent.com/57179721/72508561-3a6b3180-3889-11ea-9946-ef47de060367.gif)
 ![DEMO](https://user-images.githubusercontent.com/57179721/72508470-0db71a00-3889-11ea-85a9-f562938282ce.gif)
+![DEMO](https://user-images.githubusercontent.com/57179721/73056718-16d06880-3ed3-11ea-9310-4e5ea74f3bda.gif)
 ### いいね機能の実装、非同期通信の実装、自分のメッセージは左側で他のメンバーは右表示される設定と自分がメンバーではない場合、メッサージが全て真ん中に表示される様にしました:exclamation:
 ## Mypage
 ![DEMO](https://user-images.githubusercontent.com/57179721/72693875-1f910980-3b76-11ea-8a04-ed1151970849.gif)
@@ -22,3 +23,4 @@
 ## SearchPage
 ![DEMO](https://user-images.githubusercontent.com/57179721/72694017-b52c9900-3b76-11ea-9938-cb7019b5b75c.gif)
 ### searchでは、User、Group、Messageに分けて検索できる様にしています。
+ 
