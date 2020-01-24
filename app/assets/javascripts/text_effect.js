@@ -52,8 +52,29 @@ $( function(){
       sequence: true
     }
   });
+  // mypage 
+  $(".my_page_header__right__list").textillate({
+    in:{
+      effect: 'fadeInLeft',
+      sequence: true
+    }
+  });
+  $(".user_introduce__box__name_box").textillate({
+    in:{
+      effect: 'fadeInLeft',
+      sequence: true
+    }
+  });
+  $(".user_introduce__box__comment_box").textillate({
+    initialDelay: 700,
+    in:{
+      effect: 'fadeInLeft',
+      sequence: true
+    }
+  });
   $(".group").textillate({
     loop: true,
+    initialDelay: 700,
     in:{
       effect: 'fadeInLeft',
       sequence: true
@@ -78,7 +99,7 @@ $( function(){
   });
 
   $(".belongs_to_group__box__text__title_name").textillate({
-    initialDelay: 4000,
+    initialDelay: 5000,
     loop: true,
     in:{
       effect: 'swing',

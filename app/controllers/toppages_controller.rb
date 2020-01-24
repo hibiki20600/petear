@@ -1,11 +1,12 @@
 class ToppagesController < ApplicationController
   def index
-    @friends = Group.where(tag: 'friend').order("RAND()")
-    @family = Group.where(tag: 'family').order("RAND()")
-    @classmate = Group.where(tag: 'classmate').order("RAND()")
-    @mate = Group.where(tag: 'mate').order("RAND()")
-    @high = Group.where(tag: 'high').order("RAND()")
-    @middle = Group.where(tag: 'middle').order("RAND()")
+    group = Group.includes(:messages).all
+    @friends = group.where(tag: 'friend').order("RAND()")
+    @family = group.where(tag: 'family').order("RAND()")
+    @classmate = group.where(tag: 'classmate').order("RAND()")
+    @mate = group.where(tag: 'mate').order("RAND()")
+    @high = group.where(tag: 'high').order("RAND()")
+    @middle = group.where(tag: 'middle').order("RAND()")
     
   end
 

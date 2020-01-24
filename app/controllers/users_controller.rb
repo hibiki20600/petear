@@ -12,8 +12,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find( params[:id] )
-    @followings = GroupFollower.where(follower_id: @user.id)
+    @user = User.includes(:groups).find( params[:id] )
+    @followings = GroupFollower.where(follower_id: @user.id).includes(:group)
   end
 
   private

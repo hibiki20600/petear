@@ -9,12 +9,12 @@
   height: 100vh;
   padding-top: 9vh;
   padding-left: 22vw;
-  background-image: url(33334.jpeg);
+  background-image: image-url("33334.jpeg");
   background-size: cover;
   box-sizing: border-box;
   font-size: 50px;
   color: white;
-  
+  animation: big linear 1s;
 }
 
 
