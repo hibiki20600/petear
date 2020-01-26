@@ -38,7 +38,6 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'faker'
-  gem 'sqlite3'
 end
 
 group :development do
@@ -63,7 +62,7 @@ group :test do
 end
 
 group :production do 
-     gem 'pg'
+     gem 'unicorn', '5.4.1'
 end
 
 gem "haml-rails", ">= 1.0", '<= 2.0.1'

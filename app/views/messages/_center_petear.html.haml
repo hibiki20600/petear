@@ -1,25 +1,26 @@
-.chat_contents__center_petear
-  .chat_contents__center_petear__user
-    =image_tag message.user.image, size: "30x30", alt: "image", class: "chat_contents__center_petear__user__icon"
-    = link_to message.user.name, user_path(message.user.id), class: "chat_contents__center_petear__user__name"
-    //.message-created_at 
-    //  = message.created_at.strftime("%Y/%m/%d  %H:%M")
-  -if message.image?
-    %a.chat_contents__center_petear__image{ :href => message.image }
-      = image_tag message.image, size: "400x250", alt: "image"
-  -else
-    = video_tag message.video_url.to_s, size: "400x250", loop: true, controls: true, id: "mv"
-  
-  
-  .text_box
-    .text_box__text
-      = message.message
-    .text_box__icon
-      -if current_user.alreadyGood?(message)
-        = link_to group_message_goods_toggle_path(group_id: @group.id, message_id: message.id, user_id: current_user.id), class: "link_good_r", remote: true do
-          = fa_icon 'heart', class: 'heart_icon_red'
-      -else
-        = link_to group_message_goods_toggle_path(group_id: @group.id, message_id: message.id, user_id: current_user.id), class: "link_good", remote: true do
-          = fa_icon 'heart', class: 'heart_icon'
-      .text_box__good_sum{value: message.goods.length}
-        =message.goods.length
+%li.message_li
+  .chat_contents__center_petear
+    .chat_contents__center_petear__user
+      =image_tag message.user.image, size: "30x30", alt: "image", class: "chat_contents__center_petear__user__icon"
+      = link_to message.user.name, user_path(message.user.id), class: "chat_contents__center_petear__user__name"
+      //.message-created_at 
+      //  = message.created_at.strftime("%Y/%m/%d  %H:%M")
+    -if message.image?
+      %a.chat_contents__center_petear__image{ :href => message.image }
+        = image_tag message.image, size: "400x250", alt: "image"
+    -else
+      = video_tag message.video_url.to_s, size: "400x250", loop: true, controls: true, id: "mv"
+    
+    
+    .text_box
+      .text_box__text
+        = message.message
+      .text_box__icon
+        -if current_user.alreadyGood?(message)
+          = link_to group_message_goods_toggle_path(group_id: @group.id, message_id: message.id, user_id: current_user.id), class: "link_good_r", remote: true do
+            = fa_icon 'heart', class: 'heart_icon_red'
+        -else
+          = link_to group_message_goods_toggle_path(group_id: @group.id, message_id: message.id, user_id: current_user.id), class: "link_good", remote: true do
+            = fa_icon 'heart', class: 'heart_icon'
+        .text_box__good_sum{value: message.goods.length}
+          =message.goods.length

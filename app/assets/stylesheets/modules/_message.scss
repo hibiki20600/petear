@@ -3,7 +3,7 @@ a{
   text-decoration-line: none;
   color: white;
 }
-li {
+.header__list{
   height: 16px;
   line-height: 68px;
   margin-right: 20px;
@@ -253,4 +253,9 @@ li {
   text-align: right;
   margin-right: 15px;
   color: rgba(65, 64, 64, 0.692)
+}
+
+
+.message_li{
+  position: relative;
 }

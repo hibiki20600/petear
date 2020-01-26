@@ -57,4 +57,18 @@ $( function(){
         alert('error');
       })
   })
+
+  $('ul.group_messages li')
+    .css({
+        top   : '30px',
+        right : '30px',
+        opacity: 0
+    })
+    .each(function(i){
+        $(this).delay(300 * i)
+            .animate({
+                left : '0',
+                opacity: 1
+            }, 700);
+  });
 })

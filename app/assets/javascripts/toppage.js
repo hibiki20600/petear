@@ -27,6 +27,7 @@ $( function() {
         element[i].classList.remove('is-show');
       }
     }
+
   }
 
   //実装

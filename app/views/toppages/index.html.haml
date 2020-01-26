@@ -1,17 +1,18 @@
--if not user_signed_in?
-  .toppage
-    .toppage_box
-    %p.toppage__text  welcome to Petear 
+//-if not user_signed_in?
+//  .toppage
+//    .toppage_box
+//    %p.toppage__text  welcome to Petear 
+
 .header
   =link_to "Petear", root_path, class: "header__title"
   %ul.header__right
     -if user_signed_in? 
-      %li 
+      %li.header__list
         = link_to "#{current_user.name}", user_path(current_user), class: 'header__right__li'
     -else
-      %li
+      %li.header__list
         = link_to "ログイン", new_user_session_path, class: 'header__right__li'
-      %li
+      %li.header__list
         =link_to "新規登録", new_user_registration_path, class: 'header__right__li'
       
       

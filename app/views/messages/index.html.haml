@@ -5,25 +5,26 @@
       .chat_header__left__title
         = @group.name
     %ul.chat_header__right
-      %li 
+      %li.header__list
         = link_to "メンバー", group_path(@group), class: 'chat_header__right__li'
       -if @group.owner?(current_user.id)
-        %li
+        %li.header__list
           = link_to "Edit", edit_group_path(@group.id), class: 'chat_header__right__li'
-      %li 
+      %li.header__list
         =link_to "Topへ", root_path, class: 'chat_header__right__li'
   
   
   .chat_contents
-    -if @group.users.exists?(current_user)
-      - @messages.each do | message |
-        -if message.user.id == current_user.id
-          = render 'left_petear', { message: message}
-        - else
-          = render 'right_petear', { message: message }
-    - else
-      - @messages.each do | message |
-        = render 'center_petear', { message: message}
+    %ul.group_messages
+      -if @group.users.exists?(current_user)
+        - @messages.each do | message |
+          -if message.user.id == current_user.id
+            = render 'left_petear', { message: message}
+          - else
+            = render 'right_petear', { message: message }
+      - else
+        - @messages.each do | message |
+          = render 'center_petear', { message: message}
         
         
   -@group.users.each do |user|
