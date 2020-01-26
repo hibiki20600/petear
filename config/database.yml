@@ -49,9 +49,7 @@ test:
 #
 production:
   <<: *default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  database: petear_production
-  username: petear
-  password:<%= ENV['PETEAR_DATABASE_PASSWORD'] %>
+   database: petear_production
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
