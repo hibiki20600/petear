@@ -13,7 +13,6 @@ module Petear
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.time_zone = 'Tokyo'
-    config.assets.initialize_on_precompile = false
     config.generators do |g|
       g.stylesheets false
       g.javascripts false
