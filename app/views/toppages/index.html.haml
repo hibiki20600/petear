@@ -35,14 +35,15 @@
             %p.left-content__mypage-ball--text
               Mypage
 
-  .contents__tag
-    %h2.js-animation ~OO仲間~
-    %button.list-btn.js-animation 一覧 >>
-  .contents__tag_box.js-animation
-    - @mate.each do |group|
-      = render 'group_box', { group: group }
-     
+  
   .contents
+    .contents__tag
+      %h2.js-animation ~OO仲間~
+      %button.list-btn.js-animation 一覧 >>
+    .contents__tag_box.js-animation
+      - @mate.each do |group|
+        = render 'group_box', { group: group }
+
     .contents__tag
       %h2.js-animation ~動物~
       %button.list-btn.js-animation 一覧 >>
