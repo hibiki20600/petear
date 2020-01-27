@@ -34,6 +34,14 @@
           .left-content__mypage-ball
             %p.left-content__mypage-ball--text
               Mypage
+
+    .contents__tag
+      %h2.js-animation ~OO仲間~
+      %button.list-btn.js-animation 一覧 >>
+    .contents__tag_box.js-animation
+      - @mate.each do |group|
+        = render 'group_box', { group: group }
+     
   .contents
     .contents__tag
       %h2.js-animation ~動物~
@@ -43,13 +51,6 @@
         = render 'group_box', { group: group }
     
     .contents__tag
-      %h2.js-animation ~キャンプ~
-      %button.list-btn.js-animation 一覧 >>
-    .contents__tag_box.js-animation
-      - @camp.each do |group|
-        = render 'group_box', { group: group }
-
-    .contents__tag
       %h2.js-animation ~海~
       %button.list-btn.js-animation 一覧 >>
     .contents__tag_box.js-animation
@@ -57,25 +58,26 @@
         = render 'group_box', { group: group }
 
     .contents__tag
-      %h2.js-animation ~OO仲間~
-      %button.list-btn.js-animation 一覧 >>
-    .contents__tag_box.js-animation
-      - @mate.each do |group|
-        = render 'group_box', { group: group }
-     
-    .contents__tag
       %h2.js-animation ~OO高~
       %button.list-btn.js-animation 一覧 >>
     .contents__tag_box.js-animation
       - @high.each do |group|
         = render 'group_box', { group: group }
-    
+
+    .contents__tag
+      %h2.js-animation ~キャンプ~
+      %button.list-btn.js-animation 一覧 >>
+    .contents__tag_box.js-animation
+      - @camp.each do |group|
+        = render 'group_box', { group: group }
+
     .contents__tag
       %h2.js-animation ~OO大~
       %button.list-btn.js-animation 一覧 >>
     .contents__tag_box.js-animation
       - @uni.each do |group|
         = render 'group_box', { group: group }
+        
   .right-content
     .search-pendulum
       .search-line
