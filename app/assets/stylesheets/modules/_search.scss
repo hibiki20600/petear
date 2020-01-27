@@ -32,7 +32,10 @@
       margin: 0 auto;
       margin-bottom: 30px;
       overflow: auto;
-      
+      &__li{
+        position: relative;
+        display: inline-block;
+      }
       &--user{
         height: calc( 100vh - 108px );
         width: 60vw;

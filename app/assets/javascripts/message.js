@@ -65,7 +65,7 @@ $( function(){
         opacity: 0
     })
     .each(function(i){
-        $(this).delay(300 * i)
+        $(this).delay(200 * i)
             .animate({
                 left : '0',
                 opacity: 1

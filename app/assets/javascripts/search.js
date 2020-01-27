@@ -138,4 +138,16 @@ $( function(){
     })
   })
 
+  $('ul.search-center li')
+  .css({
+      right : '10px',
+      opacity: 0
+  })
+  .each(function(i){
+      $(this).delay(100 * i)
+          .animate({
+              left : '0',
+              opacity: 1
+          }, 700);
+});
 })
