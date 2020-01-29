@@ -2,7 +2,7 @@
   = link_to group_messages_path(group) do
     .contents__tag_box__group_box.hvr-grow
       %ul.photo
-        -group.messages.each do |message|
+        -group.messages.last(5).each do |message|
           %li
             = image_tag message.image, size: "360x225", alt: "image", class: "contents__tag_box__group_box__image"
         %li
