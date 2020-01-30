@@ -13,7 +13,12 @@ class ToppagesController < ApplicationController
   def search
     @messages = Message.order("created_at DESC").first(100)
     return nil if params[:user_keyword] == ""
-    @users = User.where(['name LIKE ?', "%#{params[:user_keyword]}%"] ).where.not(id: current_user.id)
+    if user_signed_in?
+      @users = User.where(['name LIKE ?', "%#{params[:user_keyword]}%"] ).where.not(id: current_user.id)
+    else
+      @users = User.where(['name LIKE ?', "%#{params[:user_keyword]}%"] )
+    end
+
     respond_to do |format|
       format.html
       format.json
