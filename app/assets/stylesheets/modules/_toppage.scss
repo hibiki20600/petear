@@ -196,8 +196,9 @@
   
 }
 .contents{
-  height: 3700px;
+  height: 100%;
   width: 78vw;
+  padding-bottom: 40vh;
   background: image-url("girl.jpg"), image-url("party.jpg"), image-url("happy.jpg");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position:
