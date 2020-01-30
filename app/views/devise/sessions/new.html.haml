@@ -10,12 +10,12 @@
           .field-label
             = f.label :email
           .field-input
-            = f.email_field :email, autofocus: true
-          .field
-            .field-label
-              = f.label :password
-              %i (英数字8文字以上)
-            .field-input
-              = f.password_field :password, autocomplete: "off"
+            = f.email_field :email, autofocus: true, class: "field-input--email", placeholder: '実際に利用する事がないため、架空のメールアドレスでも問題ありません'
+        .field
+          .field-label
+            = f.label :password
+            %i (英数字8文字以上)
+          .field-input
+            = f.password_field :password, autocomplete: "off"
           .actions
             = f.submit "Log in", class: 'btn'

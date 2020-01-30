@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   end
   root to: "toppages#index"
   resources :groups, only: [:new, :create, :edit, :update, :show, :destroy] do
+    member do
+      get 'album'
+    end
     resources :messages, only: [:index, :create] do
       get 'goods/toggle'
     end

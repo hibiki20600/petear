@@ -43,18 +43,21 @@
         margin-bottom: 30px;
         overflow: auto;
         &__box{
-          width: 40vw;
+          margin-top: 5px;
+          width: calc(40vw + 10px);
           margin-left: 10vw;
           &__li{
-            background-color: rgba(255, 255, 255, 0);
+            background-color: #fff;
             display: inline-block;
             margin-top: 20px;
-            margin-left: 43px;
-            margin-right: 43px;
+            margin-left: 33px;
+            margin-right: 33px;
+            padding: 8px 10px 3px;
             &__image{
               border-radius: 50%;
             }
             &__text{
+              color: black;
               text-align: center;
             }
           }
@@ -66,7 +69,6 @@
         margin: 0 auto;
         margin-bottom: 30px;
         overflow: auto;
-        
         &__box{
           background-color: rgba(255, 255, 255, 0);
           &__li{

@@ -2,8 +2,7 @@
 .chat
   .chat_header
     .chat_header__left
-      .chat_header__left__title
-        = @group.name
+      =link_to "#{@group.name}", album_group_path(@group.id), class: "chat_header__left__title"
     %ul.chat_header__right
       %li.header__list
         = link_to "メンバー", group_path(@group), class: 'chat_header__right__li'

@@ -33,6 +33,9 @@ class GroupsController < ApplicationController
     redirect_to root_path
   end
 
+  def album
+    @group = Group.find(params[:id])
+  end
 
   private
 

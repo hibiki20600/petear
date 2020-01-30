@@ -81,7 +81,7 @@ a{
     height: calc( 100vh - 80px);
     width: 70vw;
     margin: 0 auto;
-    padding: 40px 0 60px 5vw;
+    padding: 40px 0 90px 5vw;
     background-color: rgba(255, 255, 255, 0.6);
     background-blend-mode:lighten;
     background-size: cover;
@@ -178,7 +178,7 @@ a{
 
   }
   .chat_form{
-    width: 36vw;
+    width: 38vw;
     height: 60px;
     padding-top: 8px;
     padding-left: 3px;
@@ -259,3 +259,4 @@ a{
 .message_li{
   position: relative;
 }
+
