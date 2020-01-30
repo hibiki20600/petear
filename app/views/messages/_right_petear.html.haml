@@ -9,7 +9,7 @@
       %a.chat_contents__right_petear__image{ :href => message.image }
         = image_tag message.image, size: "400x250", alt: "image"
     -else
-      = video_tag message.video_url.to_s, size: "400x250", loop: true, controls: true, id: "mv"
+      = video_tag message.video_url.to_s, size: "400x250", loop: false, controls: true, id: "mv"
   
     .text_box
       .text_box__text
