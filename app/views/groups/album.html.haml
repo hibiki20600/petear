@@ -13,3 +13,5 @@
   
   
   .chat_contents
+    -@messages.each do |message|
+      = render "message", { message: message }

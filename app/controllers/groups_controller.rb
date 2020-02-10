@@ -35,6 +35,7 @@ class GroupsController < ApplicationController
 
   def album
     @group = Group.find(params[:id])
+    @messages = @group.messages
   end
 
   private

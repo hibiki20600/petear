@@ -4,7 +4,7 @@ class Message < ApplicationRecord
   has_many :goods
   has_many :good_users, through: :goods, source: :user
   validates :image, presence: true, unless: :video?
-  validates :image, absence: true, if: :video?
+  validates :image, presence: false, if: :video?
   mount_uploader :image, ImageUploader
   mount_uploader :video, VideoUploader
 end

@@ -8,7 +8,6 @@ class MessagesController < ApplicationController
   end
 
   def create
-    binding.pry
     @message = @group.messages.create(message_params)
     respond_to do |format|
       format.html 

@@ -50,8 +50,10 @@ $( function(){
         $('.chat_contents').append(html);
         $('#new_message')[0].reset();
         $('.chat_form__box__submit').prop('disabled', false);
+        $(".chat_contents__center_petear__form").css({
+          display: "none"
+        })
         $('.chat_contents').animate({scrollTop:$('.chat_contents')[0].scrollHeight});
-        
       })
       .fail(function(){
         alert('error');
@@ -71,4 +73,57 @@ $( function(){
                 opacity: 1
             }, 700);
   });
+
+
+  //message送信時
+  $(".chat_form__box__input__message").on("keyup", function(){
+    $(".chat_contents__center_petear__form").css({
+      display: "block"
+    })
+    $('.chat_contents').animate({scrollTop:$('.chat_contents')[0].scrollHeight});
+    var keyword = $(this).val();
+    if(keyword){
+      $(".text_box__text__form ").html(keyword);
+      $(".text_box__text__form ").css({
+        color: "black"
+      })
+    }else{
+      $(".text_box__text__form ").html("message");
+      $(".text_box__text__form ").css({
+        color: "gray"
+      })
+    }
+  })
+  $('.hidden-image').on('change', function(e){
+    $(".chat_contents__center_petear__form").css({
+      display: "block"
+    })
+    $('.chat_contents').animate({scrollTop:$('.chat_contents')[0].scrollHeight});
+    var file = e.target.files[0];
+    var Url = window.URL.createObjectURL(file);
+    $('.field-image__user_icon').remove();
+    var html =
+      `<img alt="image" class="chat_contents__center_petear__form--iv" src=${Url} width="400" height="250"></img>`
+    $(".chat_contents__center_petear__form--iv").remove();
+    $(".chat_contents__center_petear__form--box").append(html);
+    $(".chat_contents__center_petear__form--box").css({
+      border: "none"
+    })
+  })
+  $('.hidden-video').on('change', function(e){
+    $(".chat_contents__center_petear__form").css({
+      display: "block"
+    })
+    $('.chat_contents').animate({scrollTop:$('.chat_contents')[0].scrollHeight});
+    var file = e.target.files[0];
+    var Url = window.URL.createObjectURL(file);
+    $('.field-image__user_icon').remove();
+    var html =
+      `<img alt="image" class="chat_contents__center_petear__form--iv" src=${Url} width="400" height="250"></img>`
+    $(".chat_contents__center_petear__form--iv").remove();
+    $(".chat_contents__center_petear__form--box").append(html);
+    $(".chat_contents__center_petear__form--box").css({
+      border: "none"
+    })
+  })
 })

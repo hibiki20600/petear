@@ -24,8 +24,19 @@
       - else
         - @messages.each do | message |
           = render 'center_petear', { message: message}
+
+
+    .chat_contents__center_petear__form
+      .chat_contents__center_petear__user
+        =image_tag current_user.image, size: "30x30", alt: "image", class: "chat_contents__center_petear__user__icon"
+        %p.chat_contents__center_petear__user__name 
+          = current_user.name
+      .chat_contents__center_petear__form--box
+      .text_box
+        %p.text_box__text__form message
+
         
-        
+
   -@group.users.each do |user|
     -if current_user.id == user.id
       .chat_form
@@ -36,10 +47,10 @@
               .chat__form__box__input__mask
                 = f.label :image, class: 'chat_form__box__input__mask__image' do
                   = fa_icon 'image', class: 'icon'
-                  = f.file_field :image, class: 'hidden'
+                  = f.file_field :image, class: 'hidden-image'
                 = f.label :video, class: 'chat_form__box__input__mask__video' do
                   = fa_icon 'film', class: 'icon'
-                  = f.file_field :video, class: 'hidden'
+                  = f.file_field :video, class: 'hidden-video'
             = f.submit 'Send', class: 'chat_form__box__submit'
       -break
   

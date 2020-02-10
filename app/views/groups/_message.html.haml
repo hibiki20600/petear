@@ -1,0 +1,4 @@
+-if message.image.nil?
+  = video_tag message.video_url.to_s, size: "200x125", loop: false, controls: true, id: "mv"
+-else
+  = image_tag message.image, size: "200x125"
