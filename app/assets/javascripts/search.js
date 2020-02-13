@@ -74,7 +74,6 @@ $( function(){
   $(".search-text-box__user").on("keyup", function(e){
     e.preventDefault();
     var keyword = $(this).val();
-
     $.ajax({
       type: "GET",
       url: "/toppages/search",

@@ -25,7 +25,6 @@
         - @messages.each do | message |
           = render 'center_petear', { message: message}
 
-
     .chat_contents__center_petear__form
       .chat_contents__center_petear__user
         =image_tag current_user.image, size: "30x30", alt: "image", class: "chat_contents__center_petear__user__icon"
@@ -34,8 +33,6 @@
       .chat_contents__center_petear__form--box
       .text_box
         %p.text_box__text__form message
-
-        
 
   -@group.users.each do |user|
     -if current_user.id == user.id
