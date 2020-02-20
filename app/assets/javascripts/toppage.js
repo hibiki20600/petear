@@ -42,22 +42,22 @@ $( function() {
     });
   
     // 画像表示
-    $(".photo").hover(function(){
-      $(this).attr("id", "photo");
-    }, function(){
-      $(this).attr("id", "nil");
-    })
-    function photoFade() {
-      $('#photo li:first').clone(true).appendTo('#photo');
-      $('#photo li:last').css({ opacity:'0'})
-      $('#photo li:last').animate({ opacity:'1' },{ duration:1500, complete:function(){
-      $('#photo li:first').remove()
-      }
-      });
-     }
-    setInterval(function(){
-      photoFade();
-    }, 3000);
+    //$(".photo").hover(function(){
+    //  $(this).attr("id", "photo");
+    //}, function(){
+    //  $(this).attr("id", "nil");
+    //})
+    //function photoFade() {
+    //  $('#photo li:first').clone(true).appendTo('#photo');
+    //  $('#photo li:last').css({ opacity:'0'})
+    //  $('#photo li:last').animate({ opacity:'1' },{ duration:1500, complete:function(){
+    //  $('#photo li:first').remove()
+    //  }
+    //  });
+    // }
+    //setInterval(function(){
+    //  photoFade();
+    //}, 3000);
   
     // テキスト
     $(".contents__tag_box__group_box__text__title_name").textillate({
