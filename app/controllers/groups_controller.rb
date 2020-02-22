@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update, :show]
-
+  before_action :move_to_sign
   def new
     @group = Group.new
     @group.users << current_user
@@ -48,7 +48,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
-  def move_to_root
+  def move_to_sign
     redirect_to new_user_registration_path unless user_signed_in?
   end
 

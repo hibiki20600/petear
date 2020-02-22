@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_group
-  before_action :move_to_root
+  before_action :move_to_sign, except: :index
 
   def index
     @message = Message.new
@@ -26,7 +26,7 @@ class MessagesController < ApplicationController
     @group = Group.find(params[:group_id])
   end
   
-  def move_to_root
+  def move_to_sign
     redirect_to new_user_registration_path unless user_signed_in?
   end
   
