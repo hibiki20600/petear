@@ -9,8 +9,10 @@
           = link_to "#{@user.name}の編集", edit_user_path(current_user), class: 'my_page_header__right__list'
         %li.header__list
         = link_to "ログアウト", destroy_user_session_path, class: 'my_page_header__right__list', method: :delete, data: { confirm: "ログアウトしてもよろしいですか?"}
-      -elsif @user.invite.include?(current_user)
+      -elsif @following
         %li.header__list ~ 申請中 ~
+      -elsif @followed
+        %li.header__list ~ 招待されています ~
       -else
         %li.header__list 
           = form_for(@user.freriqus.build) do |f|
@@ -28,6 +30,7 @@
           = @user.name
         .user_introduce__box__comment_box
           = @user.comment
+    //= @user.account_id
     -if current_user == @user
       %h1.group.friend Friends
       .has_many_user

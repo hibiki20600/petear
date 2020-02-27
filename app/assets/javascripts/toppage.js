@@ -78,13 +78,21 @@ $( function() {
     $(".vibration-stop").toggleClass("vibration");
     $(this).toggleClass("tag-stop");
     $(".u_tag_update").animate({ top:'300px' },{ duration:300 } )
+    $(".new-tag-box").css({
+      display:"block"
+    })
+    $(".no_u_tags__title").css({
+      display:"none"
+   })
   })
 
   $(".tag-stop").on("click", function(e){
     e.preventDefault();
     $(".vabration").toggleClass("vibration-stop");
     $(this).toggleClass("tag");
-    $(".u_tag_update").animate({ top:'270px' },{ duration:300 })
+    $(".new-tag-box").css({
+       display:"hidden"
+    })
   })
 
 

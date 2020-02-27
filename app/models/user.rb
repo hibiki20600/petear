@@ -12,12 +12,15 @@ class User < ApplicationRecord
   has_many :goods
   has_many :gooded_messages, through: :goods, source: :message
   has_many :u_tags
-  has_many :inverse_freriqus , class_name: "Freriqu" , foreign_key: "invited_id"
-  has_many :invited, through: :inverse_freriqus, source: :invited
-  has_many :freriqus, class_name: "Freriqu", foreign_key: "invite_id"
-  has_many :invites, through: :freriqus, source: :invite
 
+  has_many :freriqus, foreign_key: "invite_id", class_name: "Freriqu", dependent: :destroy
+  has_many :invite, through: :freriqus
+  has_many :follower_relationships, foreign_key: "invited_id", class_name: "Freriqu", dependent: :destroy
+  has_many :invited, through: :follower_relationships
 
+  def followed?(user)
+    freriqus.find_by(invite_id: user.id)
+  end
   
   mount_uploader :image, ImageUploader
   validates :image, presence: true

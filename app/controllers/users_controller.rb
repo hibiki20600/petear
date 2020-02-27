@@ -15,6 +15,8 @@ class UsersController < ApplicationController
     @user = User.includes(:groups).find( params[:id] )
     @followings = GroupFollower.where(follower_id: @user.id).includes(:group)
     @user_acquaintance = @user.invited
+    @followed = Freriqu.where(invite_id: current_user.id, invited_id: @user.id)[0]
+    @following = Freriqu.where(invite_id: @user.id, invited_id: current_user.id)[0]
   end
 
   private

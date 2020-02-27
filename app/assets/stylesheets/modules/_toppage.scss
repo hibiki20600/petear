@@ -313,3 +313,26 @@
   75% { transform: rotate(-0.6deg); }
   100% { transform: rotate(0deg); }
 }
+
+.tag_up_send{
+  margin-top: 2.5px;
+}
+.edit_u_tag_group{
+  display: flex;
+  &__text{
+    margin-left: -30px;
+    margin-right: 60px;
+  }
+}
+#u_tag_group_u_tag_id{
+  font-size: 12px;
+}
+.no_u_tags__title{
+  font-size: 30px;
+  color:  black;
+  text-shadow: 1px 1px white;
+  background-color: #fff;
+  position: absolute;
+  top: 200px;
+  left: 23vw;
+}

@@ -1,6 +1,7 @@
 .g
   .u_tag_update
     = form_for(group.u_tag_groups.find_by(group_id: group.id, u_tag_id: u_tag_id ), html: { method: :patch }) do |f|
+      %p.edit_u_tag_group__text タグ替え
       = f.collection_select :u_tag_id, UTag.where(user_id: current_user.id), :id, :tag
       = f.hidden_field :group_id, value: group.id
       = f.hidden_field :before_u_tag_id, value: u_tag_id

@@ -8,7 +8,7 @@
 
 .new-tag-box
   = form_for @u_tag do |f|
-    = f.text_field :tag, placeholder: "タグ名"
+    = f.text_field :tag, placeholder: "新しいタグ"
     = f.hidden_field :user_id, value: current_user.id
     = f.submit 'Send'
 
@@ -23,13 +23,16 @@
 
   
   .contents
-    -@u_tags.each do |tag|
-      .contents__tag
-        %h2.js-animation 
-          = "~ #{tag.tag} ~"
-      .contents__tag_box.js-animation
-        - tag.groups.each do |group|
-          = render 'group_box', { group: group, u_tag_id: tag.id }
+    -if @u_tags.length == 0
+      %h1.no_u_tags__title まずは、タグボタンを押して新しいタグを作りましょう
+    -else
+      -@u_tags.each do |tag|
+        .contents__tag
+          %h2.js-animation 
+            = "~ #{tag.tag} ~"
+        .contents__tag_box.js-animation
+          - tag.groups.each do |group|
+            = render 'group_box', { group: group, u_tag_id: tag.id }
 
   .right-content
     .search-pendulum
