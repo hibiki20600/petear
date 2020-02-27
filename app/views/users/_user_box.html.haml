@@ -1,0 +1,5 @@
+.search-center--user__box__li
+  %a{href: user.id}
+    = image_tag user.image, size: "100x100", class: "search-center--user__box__li__image"
+    %p.search-center--user__box__li__text 
+      = user.name

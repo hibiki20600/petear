@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       get "search2"
     end
   end
-  root to: "toppages#index"
+    root to: "toppages#index"
   resources :groups, only: [:new, :create, :edit, :update, :show, :destroy] do
     member do
       get 'album'
@@ -21,4 +21,8 @@ Rails.application.routes.draw do
   resources :group_followers, only: [:create, :destroy]
   resources :group_users, only: [:create, :destroy]
   resources :goods, only: [:create, :destroy]
+  resources :u_tags, except: [:index, :show]
+  resources :u_tag_groups
+  resources :friends, only: [:create, :destroy]
+  resources :freriqus, only: [:create, :destroy]
 end

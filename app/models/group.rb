@@ -4,6 +4,9 @@ class Group < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :group_followers, dependent: :destroy
   has_many :followers, through: :group_followers
+  has_many :u_tag_groups
+  has_many :u_tags, through: :u_tag_groups
+  accepts_nested_attributes_for :u_tag_groups
   mount_uploader :image, ImageUploader
 
   def follow(user)

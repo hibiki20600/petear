@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191126070439) do
+ActiveRecord::Schema.define(version: 20200224084413) do
+
+  create_table "freriqus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "invite_id"
+    t.integer  "invited_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["invite_id", "invited_id"], name: "index_freriqus_on_invite_id_and_invited_id", unique: true, using: :btree
+    t.index ["invite_id"], name: "index_freriqus_on_invite_id", using: :btree
+    t.index ["invited_id"], name: "index_freriqus_on_invited_id", using: :btree
+  end
+
+  create_table "friends", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["friend_id"], name: "index_friends_on_friend_id", using: :btree
+    t.index ["user_id"], name: "index_friends_on_user_id", using: :btree
+  end
 
   create_table "goods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "message_id"
@@ -42,16 +61,11 @@ ActiveRecord::Schema.define(version: 20191126070439) do
   end
 
   create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",        null: false
-    t.string   "image",       null: false
-    t.string   "tag",         null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "follower_id"
+    t.string   "name",       null: false
+    t.string   "image",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "owner_id"
-    t.index ["follower_id"], name: "index_groups_on_follower_id", using: :btree
-    t.index ["name", "image", "tag"], name: "index_groups_on_name_and_image_and_tag", unique: true, using: :btree
-    t.index ["name"], name: "index_groups_on_name", unique: true, using: :btree
   end
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -68,10 +82,28 @@ ActiveRecord::Schema.define(version: 20191126070439) do
     t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
 
+  create_table "u_tag_groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "u_tag_id"
+    t.integer  "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_u_tag_groups_on_group_id", using: :btree
+    t.index ["u_tag_id"], name: "index_u_tag_groups_on_u_tag_id", using: :btree
+  end
+
+  create_table "u_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.string   "tag",        null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_u_tags_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                                                        null: false
-    t.string   "image"
+    t.string   "image",                  default: "face2.png"
     t.string   "email",                  default: "",                         null: false
+    t.string   "account_id",                                                  null: false
     t.string   "encrypted_password",     default: "",                         null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -84,6 +116,10 @@ ActiveRecord::Schema.define(version: 20191126070439) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "freriqus", "users", column: "invite_id"
+  add_foreign_key "freriqus", "users", column: "invited_id"
+  add_foreign_key "friends", "users"
+  add_foreign_key "friends", "users", column: "friend_id"
   add_foreign_key "goods", "messages"
   add_foreign_key "goods", "users"
   add_foreign_key "group_followers", "groups"
@@ -92,4 +128,7 @@ ActiveRecord::Schema.define(version: 20191126070439) do
   add_foreign_key "group_users", "users"
   add_foreign_key "messages", "groups"
   add_foreign_key "messages", "users"
+  add_foreign_key "u_tag_groups", "groups"
+  add_foreign_key "u_tag_groups", "u_tags"
+  add_foreign_key "u_tags", "users"
 end

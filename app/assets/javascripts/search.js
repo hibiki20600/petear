@@ -74,22 +74,22 @@ $( function(){
   $(".search-text-box__user").on("keyup", function(e){
     e.preventDefault();
     var keyword = $(this).val();
-    $.ajax({
-      type: "GET",
-      url: "/toppages/search",
-      data: { user_keyword: keyword },
-      dataType: 'json'
-    })
-    .done(function(users) {
-      $(".search-center--user__box__li").remove();
-      users.forEach(function(user){
-        AddUser(user.image, user.name, user.id );
+    if(keyword.length == 16){
+      $.ajax({
+        type: "GET",
+        url: "/toppages/search",
+        data: { user_keyword: keyword },
+        dataType: 'json'
       })
-    })
-
-    .fail(function() {
-      console.log("sorry");
-    })
+      .done(function(users) {
+        $(".search-center--user__box__li").remove();
+        users.forEach(function(user){
+          AddUser(user.image, user.name, user.id );
+        })
+      })
+    }else{
+      $(".search-center--user__box__li").remove();
+    }
   })
 
 
@@ -111,9 +111,6 @@ $( function(){
       })
     })
 
-    .fail(function() {
-      console.log("sorry");
-    })
   })
 
   //messageのやつ

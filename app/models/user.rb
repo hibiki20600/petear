@@ -11,6 +11,14 @@ class User < ApplicationRecord
   has_many :followings, through: :group_followers, source: :group
   has_many :goods
   has_many :gooded_messages, through: :goods, source: :message
+  has_many :u_tags
+  has_many :inverse_freriqus , class_name: "Freriqu" , foreign_key: "invited_id"
+  has_many :invited, through: :inverse_freriqus, source: :invited
+  has_many :freriqus, class_name: "Freriqu", foreign_key: "invite_id"
+  has_many :invites, through: :freriqus, source: :invite
+
+
+  
   mount_uploader :image, ImageUploader
   validates :image, presence: true
   validates :name, presence: true

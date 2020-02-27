@@ -17,5 +17,6 @@
             %i (英数字8文字以上)
           .field-input
             = f.password_field :password, autocomplete: "off"
+          =link_to "新規登録する", new_user_registration_path, class: "link-new-reg"
           .actions
             = f.submit "Log in", class: 'btn'

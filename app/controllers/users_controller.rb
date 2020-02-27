@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
-      redirect_to root_path
+      redirect_to user_path(params[:id])
     else
       render :edit
     end
@@ -14,12 +14,13 @@ class UsersController < ApplicationController
   def show
     @user = User.includes(:groups).find( params[:id] )
     @followings = GroupFollower.where(follower_id: @user.id).includes(:group)
+    @user_acquaintance = @user.invited
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :image, :email, :comment)
+    params.require(:user).permit(:name, :image, :email, :comment, :account_id)
   end
   
   

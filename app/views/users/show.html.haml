@@ -6,12 +6,18 @@
         %li.header__list
           = link_to "クラス作成",  new_group_path, class: 'my_page_header__right__list'
         %li.header__list
-          = link_to "編集", edit_user_path(current_user), class: 'my_page_header__right__list'
+          = link_to "#{@user.name}の編集", edit_user_path(current_user), class: 'my_page_header__right__list'
         %li.header__list
         = link_to "ログアウト", destroy_user_session_path, class: 'my_page_header__right__list', method: :delete, data: { confirm: "ログアウトしてもよろしいですか?"}
-
+      -elsif @user.invite.include?(current_user)
+        %li.header__list ~ 申請中 ~
       -else
-        %li.my_page_header__right__list ~ Redirect Message ~
+        %li.header__list 
+          = form_for(@user.freriqus.build) do |f|
+            = f.hidden_field :invite_id, value: current_user.id
+            = f.hidden_field :invited_id, value: @user.id
+            = f.submit '招待する'
+
 
     
   .my_page_contents
@@ -22,18 +28,20 @@
           = @user.name
         .user_introduce__box__comment_box
           = @user.comment
-    
-    %h1.group groups
-    .belongs_to_group
-      -@user.groups.each do |group|
-        = render 'group_box', { group: group }
-    %h1.group follow
-    .belongs_to_group
-      -@followings.each do |following|
-        -following = following.group
-        -if not @user.groups.include?(following)
-          = render 'group_box', { group: following } 
+    -if current_user == @user
+      %h1.group.friend Friends
+      .has_many_user
+      %h1.group.acquaintance Acquaintance
+      .has_many_user
+        -@user_acquaintance.each do |user|
+          = render 'user_box', { user: user }
+      %h1.group Groups
+      .belongs_to_group
+        -@user.groups.each do |group|
+          = render 'group_box', { group: group }
       
+    -else
+      %h1.group Friends
       
 
 

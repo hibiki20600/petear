@@ -73,6 +73,21 @@ $( function() {
       }
     });
 
+  $(".tag").on("click", function(e){
+    e.preventDefault();
+    $(".vibration-stop").toggleClass("vibration");
+    $(this).toggleClass("tag-stop");
+    $(".u_tag_update").animate({ top:'300px' },{ duration:300 } )
+  })
+
+  $(".tag-stop").on("click", function(e){
+    e.preventDefault();
+    $(".vabration").toggleClass("vibration-stop");
+    $(this).toggleClass("tag");
+    $(".u_tag_update").animate({ top:'270px' },{ duration:300 })
+  })
+
+
   
 
 

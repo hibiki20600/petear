@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:edit, :update, :show]
-  before_action :move_to_sign
+  before_action :set_group, only: [:edit, :update, :show, :album]
+  before_action :move_to_root, except: [:new, :create]
   def new
     @group = Group.new
     @group.users << current_user
@@ -8,6 +8,7 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.create( group_params )
+    UTagGroup.create(u_tag_id: params[:group][:u_tag_ids], group_id: @group.id)
     if @group.save
       redirect_to group_messages_path(@group)
     else
@@ -16,10 +17,11 @@ class GroupsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
-    @group.update( group_params )
+    @group.update(group_params)
     redirect_to group_messages_path(@group)
   end
   
@@ -41,15 +43,16 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name, :image, :tag, :owner_id, user_ids: [] )
+    params.require(:group).permit(:name, :image, :owner_id, user_ids: [] )
   end
+ 
 
   def set_group
     @group = Group.find(params[:id])
   end
 
-  def move_to_sign
-    redirect_to new_user_registration_path unless user_signed_in?
+  def move_to_root
+    redirect_to root_path unless @group.users.includes(current_user)
   end
 
 end

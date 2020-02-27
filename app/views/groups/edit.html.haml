@@ -19,14 +19,15 @@
           = fa_icon 'picture-o', class: 'group_icon'
           = f.file_field :image, class: 'hidden-image'
         = image_tag @group.image, size: "360x225", alt: "image", class: "group_image_field__label__image"
-    .group_field
-      .group_field__label
-        = f.label :tag
-      .group_field__select_box
-        = f.select :tag, [['動物', 'animal'], ['海', 'sea'], ['キャンプ', 'camp'], ['OO仲間', 'mate'], ['高校生', 'high'], ['大学生', 'universaly']]
+    //.group_field
+    //  .group_field__label
+    //    = f.label :tag
+    //  .group_field__select_box
+    //    = f.collection_select :u_tag_ids, UTag.where(user_id: current_user.id), :id, :tag
 
     %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}
     = f.hidden_field :owner_id, value: current_user.id
+    //= f.hidden_field :u_tag_group_id, value: @u_tag_group.id
 
     .group_field_btn
       = f.submit "Update", class: 'create_btn'

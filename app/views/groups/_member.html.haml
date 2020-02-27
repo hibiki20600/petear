@@ -3,11 +3,11 @@
   .member_box__user
     = link_to user.name, user_path(user.id), class: 'member_box__user__name'
 
-  -if @group.owner?(current_user.id)
-    = form_for(@group.group_users.find_by(user_id: user.id), html: { method: :delete }) do |f|
-      = f.hidden_field :user_id, value: user.id
-      = f.hidden_field :group_id, value: @group.id
-      = f.submit '退会', class: 'unsubscribe'
+  //-if @group.owner?(current_user.id)
+  //  = form_for(@group.group_users.find_by(user_id: user.id), html: { method: :delete }) do |f|
+  //    = f.hidden_field :user_id, value: user.id
+  //    = f.hidden_field :group_id, value: @group.id
+  //    = f.submit '退会', class: 'unsubscribe'
   
     
       

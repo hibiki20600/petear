@@ -41,7 +41,7 @@ $( function(){
   $(".owner").textillate({
     in:{
       effect: 'swing',
-      delay: 50,
+      delay: 30,
       sequence: true
     }
   });

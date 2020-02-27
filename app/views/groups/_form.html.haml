@@ -21,7 +21,7 @@
       .group_field__label
         = f.label :tag
       .group_field__select_box
-        = f.select :tag, ['animal', 'sea', 'camp', 'forest', 'food']
+        = f.collection_select :u_tag_ids, UTag.where(user_id: current_user.id), :id, :tag, { prompt: '---' }
 
     %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}
     = f.hidden_field :owner_id, value: current_user.id

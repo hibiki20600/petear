@@ -5,29 +5,29 @@
         .show_group__header__left__title
           = @group.name
       %ul.show_group__header__right
-        -if @group.owner?(current_user.id)
-          %li.header__list
-            = form_for( @group, method: :delete ) do |f|
-              = f.hidden_field :id, value: @group.id
-              = f.submit '解散する', class: 'dissolve', data: { confirm: "解散してもよろしいですか(一度解散すると元に戻せません)"}
-        -elsif @group.member?(current_user)
-          %li.header__list
-            = form_for(@group.group_users.find_by(user_id: current_user.id), html: { method: :delete }) do |f|
-              = f.hidden_field :user_id, value: current_user.id
-              = f.hidden_field :group_id, value: @group.id
-              = f.submit '退会する', class: 'unsubscribe_btn', data: { confirm: "退会してもよろしいですか"}
-        -elsif @group.following?(current_user) 
-          %li.header__list
-            = form_for(@group.group_followers.find_by(follower_id: current_user.id), html: { method: :delete }) do |f|
-              = f.hidden_field :follower_id, value: current_user.id
-              = f.hidden_field :group_id, value: @group.id
-              = f.submit 'フォロー中', class: 'follow-now'
-        -else
-          %li.header__list
-            = form_for(@group.group_followers.build) do |f|
-              = f.hidden_field :follower_id, value: current_user.id
-              = f.hidden_field :group_id, value: @group.id
-              = f.submit 'フォロー', class: 'follow'
+        //-if @group.owner?(current_user.id)
+        //  %li.header__list
+        //    = form_for( @group, method: :delete ) do |f|
+        //      = f.hidden_field :id, value: @group.id
+        //      = f.submit '解散する', class: 'dissolve', data: { confirm: "解散してもよろしいですか(一度解散すると元に戻せません)"}
+        //-elsif @group.member?(current_user)
+        //  %li.header__list
+        //    = form_for(@group.group_users.find_by(user_id: current_user.id), html: { method: :delete }) do |f|
+        //      = f.hidden_field :user_id, value: current_user.id
+        //      = f.hidden_field :group_id, value: @group.id
+        //      = f.submit '退会する', class: 'unsubscribe_btn', data: { confirm: "退会してもよろしいですか"}
+        //-elsif @group.following?(current_user) 
+        //  %li.header__list
+        //    = form_for(@group.group_followers.find_by(follower_id: current_user.id), html: { method: :delete }) do |f|
+        //      = f.hidden_field :follower_id, value: current_user.id
+        //      = f.hidden_field :group_id, value: @group.id
+        //      = f.submit 'フォロー中', class: 'follow-now'
+        //-else
+        //  %li.header__list
+        //    = form_for(@group.group_followers.build) do |f|
+        //      = f.hidden_field :follower_id, value: current_user.id
+        //      = f.hidden_field :group_id, value: @group.id
+        //      = f.submit 'フォロー', class: 'follow'
         %li.header__list
           = link_to "Talkへ", group_messages_path(@group)
         %li.header__list
@@ -53,7 +53,7 @@
         = render 'member', { user: user }
   
     -if @group.followers.length != 0
-      %h1.follower Follower
+      %h1.follower Following
       -@group.followers.each do |follower|
         -unless @group.member?(follower)
           = render 'follower', { user: follower }

@@ -37,5 +37,10 @@
             = f.label :password_confirmation
           .field-input
             = f.password_field :password_confirmation, autocomplete: "off"
+        .field
+          .field-label
+            = f.label :account_id
+          .field-input
+            = f.text_field :account_id, class: "field-input--email", placeholder: '16桁の英数字', autofocus: true, pattern: "^[0-9A-Za-z]+$", length: "16"
         .actions
           = f.submit "Create Account", class: 'btn'

@@ -1,23 +1,14 @@
 class ToppagesController < ApplicationController
+  before_action :move_to_login
   def index
-    group = Group.includes(:messages).all
-    @animals = group.where(tag: 'animal').order("RAND()").first(10)
-    @sea = group.where(tag: 'sea').order("RAND()").first(10)
-    @camp = group.where(tag: 'camp').order("RAND()").first(10)
-    @mate = group.where(tag: 'mate').order("RAND()").first(10)
-    @high = group.where(tag: 'high').order("RAND()").first(10)
-    @uni = group.where(tag: 'universaly').order("RAND()").first(10)
-    
+    @u_tags = UTag.where(user_id: current_user.id).page(params[:page]).per(6)
+    @u_tag = UTag.new
   end
 
   def search
     @messages = Message.order("created_at DESC").first(100)
     return nil if params[:user_keyword] == ""
-    if user_signed_in?
-      @users = User.where(['name LIKE ?', "%#{params[:user_keyword]}%"] ).where.not(id: current_user.id)
-    else
-      @users = User.where(['name LIKE ?', "%#{params[:user_keyword]}%"] )
-    end
+    @users = User.where(['account_id LIKE ?', "%#{params[:user_keyword]}%"] )
 
     respond_to do |format|
       format.html
@@ -27,7 +18,7 @@ class ToppagesController < ApplicationController
 
   def search1
     return nil if params[:group_keyword] == ""
-    @groups = Group.where(['name LIKE ?', "%#{params[:group_keyword]}%"] )
+    @groups = current_user.groups.where(['name LIKE ?', "%#{params[:group_keyword]}%"] )
     respond_to do |format|
       format.html
       format.json
@@ -36,10 +27,16 @@ class ToppagesController < ApplicationController
 
   def search2
     return nil if params[:message_keyword] == ""
-    @messages = Message.where(['message LIKE ?', "%#{params[:message_keyword]}%"] )
+    @messages = current_user.groups.messages.where(['message LIKE ?', "%#{params[:message_keyword]}%"] )
     respond_to do |format|
       format.html
       format.json
     end
+  end
+
+  private
+
+  def move_to_login
+    redirect_to new_user_session_path unless user_signed_in?
   end
 end
