@@ -14,9 +14,14 @@ class User < ApplicationRecord
   has_many :u_tags
 
   has_many :freriqus, foreign_key: "invite_id", class_name: "Freriqu", dependent: :destroy
-  has_many :invite, through: :freriqus
+  has_many :invite, through: :freriqus, source: :invited
   has_many :follower_relationships, foreign_key: "invited_id", class_name: "Freriqu", dependent: :destroy
-  has_many :invited, through: :follower_relationships
+  has_many :invited, through: :follower_relationships, source: :invite
+
+  has_many :friends, foreign_key: "user_id", class_name: "Friend", dependent: :destroy
+  has_many :friend, through: :friends, source: :friend
+  has_many :inverse_friends, foreign_key: "friend_id", class_name: "Friend", dependent: :destroy
+  has_many :inverse_friend, through: :friends, source: :user
 
   def followed?(user)
     freriqus.find_by(invite_id: user.id)

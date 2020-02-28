@@ -83,7 +83,6 @@
       box-sizing: border-box;
       &__box{
         padding-bottom: 1vh;
-        margin: 0 1px 0;
         display: inline-block;
         &__image{
           width: 20vw;
@@ -109,5 +108,9 @@
   }
   .has_many_user{
     overflow: auto;
+    display: flex;
+  }
+  .acquaintance__user__box__li__text{
+    color: black;
   }
 }

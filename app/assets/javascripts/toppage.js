@@ -77,7 +77,7 @@ $( function() {
     e.preventDefault();
     $(".vibration-stop").toggleClass("vibration");
     $(this).toggleClass("tag-stop");
-    $(".u_tag_update").animate({ top:'300px' },{ duration:300 } )
+    $(".u_tag_update").animate({ top:'310px' },{ duration:300 } )
     $(".new-tag-box").css({
       display:"block"
     })

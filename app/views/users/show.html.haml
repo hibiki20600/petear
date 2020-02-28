@@ -9,16 +9,19 @@
           = link_to "#{@user.name}の編集", edit_user_path(current_user), class: 'my_page_header__right__list'
         %li.header__list
         = link_to "ログアウト", destroy_user_session_path, class: 'my_page_header__right__list', method: :delete, data: { confirm: "ログアウトしてもよろしいですか?"}
-      -elsif @following
+      -elsif current_user.friend.include?(@user) || current_user.inverse_friend.include?(@user)
+        %li.header__list ~ My Friend ~
+      -elsif current_user.invite.include?(@user)
         %li.header__list ~ 申請中 ~
-      -elsif @followed
-        %li.header__list ~ 招待されています ~
+      -elsif current_user.invited.include?(@user)
+        %li.header__list 
+          = link_to "~ フレンドになる ~", friends_path(user_id: current_user.id, friend_id: @user.id), method: :post, data: { confirm: "このユーザーをフレンド登録してもよろしいですか?"}
       -else
         %li.header__list 
           = form_for(@user.freriqus.build) do |f|
             = f.hidden_field :invite_id, value: current_user.id
             = f.hidden_field :invited_id, value: @user.id
-            = f.submit '招待する'
+            = f.submit '招待する', data: { confirm: "このユーザーを招待してもよろしいですか?"}
 
 
     
@@ -30,11 +33,13 @@
           = @user.name
         .user_introduce__box__comment_box
           = @user.comment
-    //= @user.account_id
     -if current_user == @user
+      = @user.account_id
       %h1.group.friend Friends
       .has_many_user
-      %h1.group.acquaintance Acquaintance
+        -@friends.each do |user|
+          = render 'user_box', { user: user }
+      %h1.group.acquaintance Acquaintance?
       .has_many_user
         -@user_acquaintance.each do |user|
           = render 'user_box', { user: user }
@@ -45,6 +50,9 @@
       
     -else
       %h1.group Friends
+      .has_many_user
+        -@friends.each do |user|
+          = render 'user_box', { user: user }
       
 
 
