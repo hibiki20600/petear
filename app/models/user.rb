@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :group_users
   has_many :groups, through: :group_users
   has_many :messages, dependent: :destroy
-  has_many :group_followers
+  has_many :group_followers, foreign_key: "follower_id", class_name: "GroupFollower"
   has_many :followings, through: :group_followers, source: :group
   has_many :goods
   has_many :gooded_messages, through: :goods, source: :message

@@ -1,0 +1,8 @@
+.acquaintance__user__box__li
+  = image_tag user.image, size: "100x100", class: "acquaintance__user__box__li__image"
+  %p.acquaintance__user__box__li__text 
+    = user.name
+  = form_for(@group.group_followers.build) do |f|
+    = f.hidden_field :follower_id, value: user.id
+    = f.hidden_field :group_id, value: @group.id
+    = f.submit '招待'
