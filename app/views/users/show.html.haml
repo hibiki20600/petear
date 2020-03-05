@@ -35,14 +35,14 @@
           = @user.comment
     -if current_user == @user
       = @user.account_id
-      %h1.group Groups
-      .belongs_to_group
-        -@user.followings.each do |group|
-          = render 'group_box', { group: group }
       %h1.group.friend Friends
       .has_many_user
         -@friends.each do |user|
           = render 'user_box', { user: user }
+      %h1.group invited Groups
+      .belongs_to_group
+        -@user.followings.each do |group|
+          = render 'group_box', { group: group }
       %h1.group.acquaintance Acquaintance?
       .has_many_user
         -@user_acquaintance.each do |user|

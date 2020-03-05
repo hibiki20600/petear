@@ -41,9 +41,9 @@
       - else
         = render 'member', { user: user }
 
-      -if current_user.id == @group.owner_id
-        %h1.member 招待する
-        -current_user.friend.each do |user|
-          -unless @group.group_users.include?(user) || @group.followers.include?(user)
-            = render "user_box", {user: user}
+    -if current_user.id == @group.owner_id
+      %h1.invite-font Invite Friend
+      -current_user.friend.each do |user|
+        -unless @group.group_users.include?(user) || @group.followers.include?(user)
+          = render "user_box", {user: user}
   
