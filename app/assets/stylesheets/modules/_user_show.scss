@@ -105,6 +105,18 @@
         }
       }
     }
+    .belongs_to_group{
+      width: 61vw ;
+      box-sizing: border-box;
+      &__box2{
+        padding-bottom: 1vh;
+        display: inline-block;
+      }
+    }
+  }
+
+  #group_u_tag_ids{
+    font-size: 12px;
   }
   .has_many_user{
     overflow: auto;

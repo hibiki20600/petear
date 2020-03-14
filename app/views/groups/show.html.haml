@@ -10,7 +10,7 @@
             = form_for(@group.group_users.find_by(user_id: current_user.id), html: { method: :delete }) do |f|
               = f.hidden_field :user_id, value: current_user.id
               = f.hidden_field :group_id, value: @group.id
-              = f.submit '退会'
+              = f.submit '退会', class: "withdraw", data: { confirm: "退会してもよろしいですか?"}
         -elsif @group.followers.include?(current_user)
           %li.header__list
             = form_for(@group.group_users.build) do |f|

@@ -2,6 +2,8 @@ class GroupUsersController < ApplicationController
 
   def create
     subscribe = GroupUser.create( sub_params )
+    group_follower = GroupFollower.where( group_id: params[:group_user][:group_id], follower_id: params[:group_user][:user_id])[0]
+    group_follower.destroy
     redirect_to :back
   end
 
